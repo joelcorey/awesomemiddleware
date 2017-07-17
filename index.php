@@ -195,15 +195,15 @@ function is_set($arr, $offset) {
 // This is an issue in all languages
 // To solve we will ignore this problem and just add a new line/return when echoing out
 $get_awesomeminer_array = file(glob("*.awesome")[0], FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-//echo_array($get_awesomeminer_array);
 
 // Useful for chopping up array:
 $key_external_start = array_search("  <ExternalMinerList>", $get_awesomeminer_array);
 $key_external_end = array_search('  </ExternalMinerList>', $get_awesomeminer_array);
-//echo $key_external_start;
-//echo $key_external_end;
+// Uncomment for testing:
+//echo $key_external_start . "\n";
+//echo $key_external_end . "\n";
 
-// Seperate parts of array for easier manipulation later
+// Seperate parts of array for dratically easier manipulation later
 $awesomeminer_array_00 = array_slice($get_awesomeminer_array, 0, get_difference(0, $key_external_start));
 $awesomeminer_array_01 = array_slice($get_awesomeminer_array, $key_external_start + 1, get_difference($key_external_start, $key_external_end - 1));
 $awesomeminer_array_02 = array_slice($get_awesomeminer_array, $key_external_end, get_difference($key_external_end, 1 + array_search(end($get_awesomeminer_array), $get_awesomeminer_array)));
@@ -217,7 +217,6 @@ $get_awesomeminer_array_01 = [];
 $indexCount = 0;
 $indexCountSub = 0;
 for($q = 0; $q < count($awesomeminer_array_01); $q++) {
-	//echo $awesomeminer_array_01[$q] . "\n";
 
 	$get_awesomeminer_array_01[$indexCount][$indexCountSub] = $awesomeminer_array_01[$q];
 
@@ -227,11 +226,18 @@ for($q = 0; $q < count($awesomeminer_array_01); $q++) {
 		$indexCount++;
 		$indexCountSub = 0;
 	}
+
 }
 
-// Uncomment these for testing if need be:
+$total_awesome =  count($get_awesomeminer_array_01) . "\n";
+$total_google = count($get_google_array_01) . "\n";
+$total_diff = $total_google - $total_awesome;
+
+// Uncomment these for testing:
 //print_r($get_awesomeminer_array_01);
 //print_r($get_google_array_01);
+//echo count($get_awesomeminer_array_01) . "\n";
+//echo count($get_google_array_01) . "\n";
 //echo_array_multiD($get_awesomeminer_array_01);
 //echo_array_multiD($get_google_array_01);
 //die();
@@ -267,13 +273,7 @@ function explode_ip_hostname($data) {
 	return $data[0];
 }
 
-//print_r($get_google_array_01);
-//die();
-
-
 //
-changeDescription($get_awesomeminer_array_01, $get_google_array_01);
-
 function changeDescription($arr1, $arr2) {
 
 	$match_count = 0;
@@ -293,7 +293,7 @@ function changeDescription($arr1, $arr2) {
 
 	  		//if (strpos($arr1[$q][$r], "<Desc") !== false) {
 	  		if (strpos($arr1[$q][$r], "<Description />") !== false) {
-	  			// The third tag is this array is the hostname, get ip for comparison against google
+	  			// The third tag in this array is the hostname, get ip for comparison against google
 	  			// Also get tid of hostname tages
 	  			$awesome_miner_description = scrape_between($arr1[$q][3], ">", "<");
 	  			// Get rid of colon and port number
@@ -315,16 +315,23 @@ function changeDescription($arr1, $arr2) {
 				if ($find_ip_awesomeminer[$a] == $arr2[$s][$t]) {
 
 					echo "AwesomeMiner: " . $find_ip_awesomeminer[$a] . " Google: " . $arr2[$s][$t] . "\n";
-					$match_count_not_present++;
-				}
+					
+				} else {
+          
+          // Due to nested for loops, a simply variable won't work. store other ip's in array instead
+          //$match_count_not_present++;
 
+          echo "AwesomeMiner: " . $find_ip_awesomeminer[$a] . " Google: IP not found \n"
+        }
 
 			}
 		}
 	}
 
 	// Need to find the awesomeminer values that are not in google.
+  // for length of google records
 	for ($g=0; $g < count($arr2); $g++) { 
+    //for length of google sub record
 		for ($h=0; $h < count($arr2[$g]); $h++) { 
 			$find_ip_google[$g] = $arr2[$g][16];
 		}
@@ -340,3 +347,10 @@ function changeDescription($arr1, $arr2) {
 
 }
 
+echo "Total asset records in Google: " . $total_google;
+echo "Total miners in AwesomeMiner: " . $total_awesome;
+echo "Total discrepency from Google to AwesomeMiner: " . $total_diff;
+echo "\n";
+
+// for consistancy with commments, always put awesomeminer array first
+changeDescription($get_awesomeminer_array_01, $get_google_array_01);

@@ -1,0 +1,34 @@
+Went with PHP instead of Node. Time was wasted on Node. There was an issue with Oauth, javascript promises, and transferring Google Sheets data in to an array. I am able to do this in PHP much more simply due to more complete documentation and more experience in PHP. I have made an attempt to keep code somewhat generic (such as avoiding foreach and using for i loops) for future porting if need be. Code is also commented.
+
+Gets Google Sheets data, puts in to array.
+Gets AwesomeMiner export data via file put in to same directory.
+Seperates start, middle, and end of AwesomeMiner data in to arrays for easier sorting.
+Seperates middle array (external miner data) into an array per external miner.
+
+The multi-dimensional arrays I am using caused a delay. I was not used to sorting data from different sources. 
+
+Due to inconsistant number of tags for each external miner, a delay was caused. For instance, some external miners have "<WorkerSuffix />" and some do not. I have talked to Patrik (lead dev Awesome) about this and other things. My suggestion was to always have the same number of tags for every miner, whether or not they are actually used. We can get around this by a more laborious search (versus just itterating a known number).
+
+Compares total records of Google Sheet (number of miners) to AwesomeMiner external miners. Useful for seeing how far behind Awesome is from Sheets
+
+Searches for empty description fields for each external miner by finding the string "<Description />".
+Because the hostname tag has a fixed position (1 above description field and never moves) we don't have to search for it. The host name contains the IP. Seperate this IP from its trailing port number. Put IP into array.
+
+Take array from above (empty description field, hostname ip's) and search Google Sheets array that we got earlier for a matching ip. If match found echo out both ip's, if match not found echo out ip from awesome only (More for testing then use). At this point we could insert back into the original Awesomeminer export file. 
+
+At this point, program is comparing each ip from hostname array to each ip in google array. I could seperate out this code in to its own function and reverse it. Assuming the logic works, this would find each ip that is in google and not in awesomeminer.
+
+Remaining tasks:
+1.) Overwrite empty description fields
+2.) Add ip's that are in Google Sheets but not in AwesomeMiner.
+3.) If multiple "*.awesome" files in same directory, determine which one is newer and use that
+4.) Before writing to "*.awesome" file, make backup of original
+
+5.) Bypass "*.awesome" file and write directly to awesomeminer XML file in AppData? (future feature)? Not sure if this is advisable as it is live edited by AwesomeMiner itself. Would have to investigate.
+
+Features I am waiting for (not critical in completing task) from Patrik:
+1.) Same number of tags for each miner in export file
+2.) A group tag, not pool related, for organizing miners in to groups
+3.) Related to the other notification project, I am waiting on a per notification acknowledge and clear. Current API can only do every notification at once.
+
+Total time spent: 8 hours.
