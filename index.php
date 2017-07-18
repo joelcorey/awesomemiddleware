@@ -141,8 +141,8 @@ if (count($values) == 0) {
 }
 
 function echo_array($arr) {
-	foreach ($arr as $a) {
-		echo $a . "\n";
+	for($q = 0; $q < count($arr); $q++) {
+		echo $q . "\n";
 	}
 }
 
@@ -229,8 +229,8 @@ for($q = 0; $q < count($awesomeminer_array_01); $q++) {
 
 }
 
-$total_awesome =  count($get_awesomeminer_array_01) . "\n";
-$total_google = count($get_google_array_01) . "\n";
+$total_awesome =  count($get_awesomeminer_array_01);
+$total_google = count($get_google_array_01);
 $total_diff = $total_google - $total_awesome;
 
 // Uncomment these for testing:
@@ -273,84 +273,91 @@ function explode_ip_hostname($data) {
 	return $data[0];
 }
 
-//
-function changeDescription($arr1, $arr2) {
 
-	$match_count = 0;
-	$match_count_not_present = 0;
+$match_count = 0;
+$match_count_not_present = 0;
+// seriously, all these arrays are getting rather silly..
+$find_ip_awesomeminer = [];
+$find_ip_google = [];
+$find_ip_notingoogle = [];
 
-	$find_ip_awesomeminer = [];
-	$find_ip_google = [];
-	$find_ip_notingoogle = [];
 
-	$suggested_add_name = '';
 
-	for($q = 0; $q < count($arr1); $q++) {
-	
-	  	for($r = 0; $r < count($arr1[$q]); $r++) {
+$suggested_add_name = '';
 
-	  		// Find Description tags that are not in the correct format
+for($q = 0; $q < count($get_awesomeminer_array_01); $q++) {
 
-	  		//if (strpos($arr1[$q][$r], "<Desc") !== false) {
-	  		if (strpos($arr1[$q][$r], "<Description />") !== false) {
-	  			// The third tag in this array is the hostname, get ip for comparison against google
-	  			// Also get tid of hostname tages
-	  			$awesome_miner_description = scrape_between($arr1[$q][3], ">", "<");
-	  			// Get rid of colon and port number
-	  			$awesome_miner_descript_ip = explode_ip_hostname($awesome_miner_description);
-	  			
-	  			// Store matches in a seperate array
-	  			$find_ip_awesomeminer[$match_count] = $awesome_miner_descript_ip;
-	  			$match_count += 1;
-	  		}
-	  	}
-	  	// Reset variable to avoid non matching results being mis-labeled from previous succesful find
-		$awesome_miner_descript_ip = '';
-	}
+  	for($r = 0; $r < count($get_awesomeminer_array_01[$q]); $r++) {
 
-	// Check google sheets array for matching ip value
-	for($a = 0; $a < count($find_ip_awesomeminer); $a++) {
-		for($s = 0; $s < count($arr2); $s++) {
-			for($t = 0; $t < count($arr2[$s]); $t++) {
-				if ($find_ip_awesomeminer[$a] == $arr2[$s][$t]) {
+  		// Find Description tags that are not in the correct format
 
-					echo "AwesomeMiner: " . $find_ip_awesomeminer[$a] . " Google: " . $arr2[$s][$t] . "\n";
-					
-				} else {
-          
-          // Due to nested for loops, a simply variable won't work. store other ip's in array instead
-          //$match_count_not_present++;
-
-          echo "AwesomeMiner: " . $find_ip_awesomeminer[$a] . " Google: IP not found \n"
-        }
-
-			}
-		}
-	}
-
-	// Need to find the awesomeminer values that are not in google.
-  // for length of google records
-	for ($g=0; $g < count($arr2); $g++) { 
-    //for length of google sub record
-		for ($h=0; $h < count($arr2[$g]); $h++) { 
-			$find_ip_google[$g] = $arr2[$g][16];
-		}
-	}
-	$unmatched_ip = array_diff($find_ip_awesomeminer, $find_ip_google);
-
-	echo "Found " .  $match_count . " <Description /> fields\n";
-	echo "Found " . $match_count_not_present . " matches in Google Sheets\n";
-	$tt = $match_count - $match_count_not_present;
-	echo "This leaves " . $tt . " unmatched ip's from AwesomeMiner\n";
-	echo "Unmatched ip's:\n";
-	echo_array($unmatched_ip);
-
+  		//if (strpos($arr1[$q][$r], "<Desc") !== false) {
+  		if (strpos($get_awesomeminer_array_01[$q][$r], "<Description />") !== false) {
+  			// The third tag in this array is the hostname, get ip for comparison against google
+  			// Also get tid of hostname tages
+  			$awesome_miner_description = scrape_between($get_awesomeminer_array_01[$q][3], ">", "<");
+  			// Get rid of colon and port number
+  			$awesome_miner_descript_ip = explode_ip_hostname($awesome_miner_description);
+  			
+  			// Store matches in a seperate array
+  			$find_ip_awesomeminer[$match_count] = $awesome_miner_descript_ip;
+  			$match_count += 1;
+  		}
+  	}
+  	// Reset variable to avoid non matching results being mis-labeled from previous succesful find
+	$awesome_miner_descript_ip = '';
 }
 
-echo "Total asset records in Google: " . $total_google;
-echo "Total miners in AwesomeMiner: " . $total_awesome;
-echo "Total discrepency from Google to AwesomeMiner: " . $total_diff;
-echo "\n";
+// Check google sheets array for matching ip value
+$awesome_google_compare = [];
+for($a = 0; $a < count($find_ip_awesomeminer); $a++) {
+	for($s = 0; $s < count($get_google_array_01); $s++) {
+		for($t = 0; $t < count($get_google_array_01[$s]); $t++) {
 
-// for consistancy with commments, always put awesomeminer array first
-changeDescription($get_awesomeminer_array_01, $get_google_array_01);
+  			if ($find_ip_awesomeminer[$a] == $get_google_array_01[$s][$t]) {
+
+  				$to_add = "Match AwesomeMiner: " . $find_ip_awesomeminer[$a] . " Match Google: " . $get_google_array_01[$s][$t];
+  				
+  			} 
+        if ($find_ip_awesomeminer[$a] != $get_google_array_01[$s][$t]) {
+
+          $to_add = "Match AwesomeMiner: " . $find_ip_awesomeminer[$a] . " Match Google: Not found";
+          
+        } 
+
+		}
+    array_push($awesome_google_compare, $to_add); 
+	}
+}
+// Nested for loops create many duplicate values
+$awesome_google_compare_output = array_unique($awesome_google_compare);
+// Re-index starting at 0
+$awesome_google_compare_output = array_values($awesome_google_compare_output);
+
+// Need to find the awesomeminer values that are not in google.
+// for length of google records
+for ($g=0; $g < count($arr2); $g++) { 
+  //for length of google sub record
+	for ($h=0; $h < count($arr2[$g]); $h++) { 
+		$find_ip_google[$g] = $arr2[$g][16];
+	}
+}
+$unmatched_ip = array_diff($find_ip_awesomeminer, $find_ip_google);
+
+for($a = 0; $a < count($awesome_google_compare_output); $a++) {
+  echo $awesome_google_compare_output[$a] . "\n";
+}
+
+
+//echo "Found " .  $match_count . " <Description /> fields\n";
+//echo "Found " . $match_count_not_present . " matches in Google Sheets\n";
+//$tt = $match_count - $match_count_not_present;
+//echo "This leaves " . $tt . " unmatched ip's from AwesomeMiner\n";
+//echo "Unmatched ip's:\n";
+//echo_array($unmatched_ip);
+
+//echo "Total asset records in Google: " . $total_google;
+//echo "Total miners in AwesomeMiner: " . $total_awesome;
+//echo "Total discrepency from Google to AwesomeMiner: " . $total_diff;
+//echo "\n";
+
