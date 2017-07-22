@@ -93,7 +93,7 @@ if (count($values) == 0) {
   // Todo: translate this to a for loop, will make porting easier in the future
   foreach ($values as $row) {
     
-    // It is duplicate effort to both put in to variables and then put those vars in to an array, but for now we will keep this like it is
+    // Seperate in to variables for readability
 
     $serial = is_set($row, 0);
     $first_hosted = is_set($row, 1);
@@ -139,6 +139,8 @@ if (count($values) == 0) {
     
   }
 }
+
+// END GOOGLE STUFF
 
 function echo_array($arr) {
 	for($q = 0; $q < count($arr); $q++) {
@@ -191,57 +193,6 @@ function is_set($arr, $offset) {
     }
 }
 
-// There is an issue with importing a file that has EOL / new line from Windows.
-// This is an issue in all languages
-// To solve we will ignore this problem and just add a new line/return when echoing out
-$get_awesomeminer_array = file(glob("*.awesome")[0], FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-
-// Useful for chopping up array:
-$key_external_start = array_search("  <ExternalMinerList>", $get_awesomeminer_array);
-$key_external_end = array_search('  </ExternalMinerList>', $get_awesomeminer_array);
-// Uncomment for testing:
-//echo $key_external_start . "\n";
-//echo $key_external_end . "\n";
-
-// Seperate parts of array for dratically easier manipulation later
-$awesomeminer_array_00 = array_slice($get_awesomeminer_array, 0, get_difference(0, $key_external_start));
-$awesomeminer_array_01 = array_slice($get_awesomeminer_array, $key_external_start + 1, get_difference($key_external_start, $key_external_end - 1));
-$awesomeminer_array_02 = array_slice($get_awesomeminer_array, $key_external_end, get_difference($key_external_end, 1 + array_search(end($get_awesomeminer_array), $get_awesomeminer_array)));
-
-// Break up in to <ExternalMinerExport> ... <ExternalMinerExport>
-// Depending on the miner, the tag "<WorkerSuffix />" can be present or absent
-// Therefore we have to do a more laborious search, rather than counting on a consistant number of 11
-// AwesomeMiner is not so awesome at times
-// Todo: put this in to its own function
-$get_awesomeminer_array_01 = [];
-$indexCount = 0;
-$indexCountSub = 0;
-for($q = 0; $q < count($awesomeminer_array_01); $q++) {
-
-	$get_awesomeminer_array_01[$indexCount][$indexCountSub] = $awesomeminer_array_01[$q];
-
-	$indexCountSub++;
-
-	if($awesomeminer_array_01[$q] == '    </ExternalMinerExport>') {
-		$indexCount++;
-		$indexCountSub = 0;
-	}
-
-}
-
-$total_awesome =  count($get_awesomeminer_array_01);
-$total_google = count($get_google_array_01);
-$total_diff = $total_google - $total_awesome;
-
-// Uncomment these for testing:
-//print_r($get_awesomeminer_array_01);
-//print_r($get_google_array_01);
-//echo count($get_awesomeminer_array_01) . "\n";
-//echo count($get_google_array_01) . "\n";
-//echo_array_multiD($get_awesomeminer_array_01);
-//echo_array_multiD($get_google_array_01);
-//die();
-
 function scrape_between($data, $start, $end){
   $data = stristr($data, $start); // Stripping all data from before $start
   $data = substr($data, strlen($start));  // Stripping $start
@@ -272,6 +223,58 @@ function explode_ip_hostname($data) {
 	$data = explode(":", $data);
 	return $data[0];
 }
+
+// There is an issue with importing a file that has EOL / new line from Windows.
+// This is an issue in all languages
+// To solve we will ignore this problem and just add a new line/return when echoing out
+$get_awesomeminer_array = file(glob("*.awesome")[0], FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+
+// Useful for chopping up array:
+$key_external_start = array_search("  <ExternalMinerList>", $get_awesomeminer_array);
+$key_external_end = array_search('  </ExternalMinerList>', $get_awesomeminer_array);
+// Uncomment for testing:
+//echo $key_external_start . "\n";
+//echo $key_external_end . "\n";
+
+// Seperate parts of array for dratically easier manipulation later
+$awesomeminer_array_00 = array_slice($get_awesomeminer_array, 0, get_difference(0, $key_external_start));
+$awesomeminer_array_01 = array_slice($get_awesomeminer_array, $key_external_start + 1, get_difference($key_external_start, $key_external_end - 1));
+$awesomeminer_array_02 = array_slice($get_awesomeminer_array, $key_external_end, get_difference($key_external_end, 1 + array_search(end($get_awesomeminer_array), $get_awesomeminer_array)));
+
+// Break up in to <ExternalMinerExport> ... </ExternalMinerExport> blocks
+// Depending on the miner, the tag "<WorkerSuffix />" can be present or absent
+// Therefore we have to do a more laborious search, rather than counting on a consistent number of 11
+// Todo: put this in to its own function
+$get_awesomeminer_array_01 = [];
+$indexCount = 0;
+$indexCountSub = 0;
+for($q = 0; $q < count($awesomeminer_array_01); $q++) {
+
+	$get_awesomeminer_array_01[$indexCount][$indexCountSub] = $awesomeminer_array_01[$q];
+
+	$indexCountSub++;
+
+	// If end of external miner, itterate to next array key
+	if($awesomeminer_array_01[$q] == '    </ExternalMinerExport>') {
+		$indexCount++;
+		$indexCountSub = 0;
+	}
+
+}
+
+
+$total_awesome =  count($get_awesomeminer_array_01);
+$total_google = count($get_google_array_01);
+$total_diff = $total_google - $total_awesome;
+
+// Uncomment these for testing:
+//print_r($get_awesomeminer_array_01);
+//print_r($get_google_array_01);
+//echo count($get_awesomeminer_array_01) . "\n";
+//echo count($get_google_array_01) . "\n";
+//echo_array_multiD($get_awesomeminer_array_01);
+//echo_array_multiD($get_google_array_01);
+//die();
 
 
 $match_count = 0;
@@ -347,7 +350,6 @@ $unmatched_ip = array_diff($find_ip_awesomeminer, $find_ip_google);
 for($a = 0; $a < count($awesome_google_compare_output); $a++) {
   echo $awesome_google_compare_output[$a] . "\n";
 }
-
 
 //echo "Found " .  $match_count . " <Description /> fields\n";
 //echo "Found " . $match_count_not_present . " matches in Google Sheets\n";
