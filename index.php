@@ -308,7 +308,7 @@ for($q = 0; $q < count($get_awesomeminer_array_01); $q++) {
 }
 
 // Check google sheets array for matching ip value
-// NOTE: this only get matching values, does not get ip's that are in AwesomeMiner AND Google Sheets, it does not get ip's that are in AwesomeMiner BUT NOT IN Google Sheets.  
+// NOTE: this only gets matching ip values (ip's that are in AwesomeMiner AND Google Sheets). It does not get ip's that are in AwesomeMiner BUT NOT IN Google Sheets.  
 $awesome_google_compare = [];
 for($a = 0; $a < count($find_ip_awesomeminer); $a++) {
 	for($s = 0; $s < count($get_google_array_01); $s++) {
@@ -330,9 +330,6 @@ for($a = 0; $a < count($find_ip_awesomeminer); $a++) {
 	}
 
 }
-
-// Re-index starting at 0
-//$awesome_google_compare_output = array_values($awesome_google_compare);
 
 echo 'Searching for empty "<Description />" tags in AwesomeMiner export file.' . "\n";
 echo "Search found these matches in both AwesomeMiner and Google Sheets:\n";
