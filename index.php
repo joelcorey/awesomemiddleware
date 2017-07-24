@@ -294,7 +294,7 @@ for($q = 0; $q < count($get_awesomeminer_array_01); $q++) {
   			// The third tag in this array is the hostname, get ip for comparison against google
   			// Also get tid of hostname tages
   			$awesome_miner_description = scrape_between($get_awesomeminer_array_01[$q][3], ">", "<");
-  			
+
   			// Get rid of colon and port number
   			$awesome_miner_descript_ip = explode_ip_hostname($awesome_miner_description);
   			
@@ -307,45 +307,37 @@ for($q = 0; $q < count($get_awesomeminer_array_01); $q++) {
 	$awesome_miner_descript_ip = '';
 }
 
-print_r($find_ip_awesomeminer);
-die();
-
 // Check google sheets array for matching ip value
+// NOTE: this only get matching values, does not get ip's that are in AwesomeMiner AND Google Sheets, it does not get ip's that are in AwesomeMiner BUT NOT IN Google Sheets.  
 $awesome_google_compare = [];
 for($a = 0; $a < count($find_ip_awesomeminer); $a++) {
 	for($s = 0; $s < count($get_google_array_01); $s++) {
-		//for($t = 0; $t < count($get_google_array_01[$s]); $t++) {
 
   			if ($find_ip_awesomeminer[$a] == $get_google_array_01[$s][16]) {
 
   				$to_add = "Match AwesomeMiner: " . $find_ip_awesomeminer[$a] . " Match Google: " . $get_google_array_01[$s][16];
-
-  				
-  			} //elseif ($find_ip_awesomeminer[$a] != $get_google_array_01[$s][16]) {
-
-	        	//$to_add = "Match AwesomeMiner: " . $find_ip_awesomeminer[$a] . " Match Google: Not found";
 	          
-	        //}  
+	        }  
 
-		//}
+	        // It is currently to difficult to do an else here, compute ip's that are not present with seperate logic
 
 	}
 
 	// Because we are in a loop, we need to only add if not already in array
 	// Another option would be array_unique after the loop
-	if (!in_array($awesome_google_compare, $to_add)) {
+	if (!in_array($to_add, $awesome_google_compare)) {
 		array_push($awesome_google_compare, $to_add);
 	}
-
-	
 
 }
 
 // Re-index starting at 0
-$awesome_google_compare_output = array_values($awesome_google_compare);
+//$awesome_google_compare_output = array_values($awesome_google_compare);
 
-for($a = 0; $a < count($awesome_google_compare_output); $a++) {
-  echo $awesome_google_compare_output[$a] . "\n";
+echo 'Searching for empty "<Description />" tags in AwesomeMiner export file.' . "\n";
+echo "Search found these matches in both AwesomeMiner and Google Sheets:\n";
+for($a = 0; $a < count($awesome_google_compare); $a++) {
+  echo $awesome_google_compare[$a] . "\n";
 }
 
 //echo "Found " .  $match_count . " <Description /> fields\n";
