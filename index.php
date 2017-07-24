@@ -331,6 +331,13 @@ for($a = 0; $a < count($find_ip_awesomeminer); $a++) {
 
 }
 
+// ENTRY POINTS: 
+// - Output updated Description fields in to seperate import file for Awesome Miner
+//
+// - Get IP's that are in Google Sheets but not AwesomeMiner. Seperate this logic in to seperate file. Add these IP's in to seperate import file for Awesome Miner
+//
+// - Create master 2 dimensional array for all IP's. Could have a "matching" field. Could use this to list IP's that are not matched. Is this a good approach? Would it create un-needed complexicty?
+
 echo 'Searching for empty "<Description />" tags in AwesomeMiner export file.' . "\n";
 echo "Search found these matches in both AwesomeMiner and Google Sheets:\n";
 for($a = 0; $a < count($awesome_google_compare); $a++) {
