@@ -337,6 +337,7 @@ for($a = 0; $a < count($find_ip_awesomeminer); $a++) {
 }
 
 //print_r($awesome_google_compare);
+//print_r($get_awesomeminer_array_01);
 //die();
 
 // ENTRY POINT: 
@@ -353,8 +354,8 @@ for($q = 0; $q < count($get_awesomeminer_array_01); $q++) {
 
 	  			$descript_update_explode = explode(" - ", $descript_update[$s]);
 			
-	  			if(strpos($get_awesomeminer_array_01[$q][$r], $descript_update_explode[0]) && strpos($descript_update[$s], $descript_update_explode[0])) {
-//DOESNT FUCKING WORK FUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUCK
+	  			if(strpos($get_awesomeminer_array_01[$q][$r], $descript_update_explode[0]) == strpos($descript_update[$s], $descript_update_explode[0])) {
+
 	  				echo $descript_update_explode[0] . "\n";
 
 	  			}
@@ -367,29 +368,9 @@ for($q = 0; $q < count($get_awesomeminer_array_01); $q++) {
 
 }
 
-
-// ENTRY POINT: 
-// - Output updated Description fields in to seperate import file for Awesome Miner
 // ENTRY POINT: 
 // - Get IP's that are in Google Sheets but not AwesomeMiner. Seperate this logic in to seperate file. Add these IP's in to seperate import file for Awesome Miner
 //
 // - Create master 2 dimensional array for all IP's. Could have a "matching" field. Could use this to list IP's that are not matched. Is this a good approach? Would it create un-needed complexicty?
 
-//echo 'Searching for empty "<Description />" tags in AwesomeMiner export file.' . "\n";
-//echo "Search found these matches in both AwesomeMiner and Google Sheets:\n";
-//for($a = 0; $a < count($awesome_google_compare); $a++) {
-//  echo $awesome_google_compare[$a] . "\n";
-//}
-
-//echo "Found " .  $match_count . " <Description /> fields\n";
-//echo "Found " . $match_count_not_present . " matches in Google Sheets\n";
-//$tt = $match_count - $match_count_not_present;
-//echo "This leaves " . $tt . " unmatched ip's from AwesomeMiner\n";
-//echo "Unmatched ip's:\n";
-//echo_array($unmatched_ip);
-
-//echo "Total asset records in Google: " . $total_google;
-//echo "Total miners in AwesomeMiner: " . $total_awesome;
-//echo "Total discrepency from Google to AwesomeMiner: " . $total_diff;
-//echo "\n";
 
