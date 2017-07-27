@@ -307,7 +307,8 @@ for($q = 0; $q < count($get_awesomeminer_array_01); $q++) {
 // Check google sheets array for matching ip value
 // NOTE: this only gets matching ip values (ip's that are in AwesomeMiner AND Google Sheets). It does not get ip's that are in AwesomeMiner BUT NOT IN Google Sheets and or visa-versa.  
 // Array for IP's that are in Google and Awesome
-$awesome_google_compare = [];
+//$awesome_google_compare = [];
+$descript_update = [];
 for($a = 0; $a < count($find_ip_awesomeminer); $a++) {
 	for($s = 0; $s < count($get_google_array_01); $s++) {
 
@@ -319,8 +320,7 @@ for($a = 0; $a < count($find_ip_awesomeminer); $a++) {
   				// Use this for production:
 				$to_add = $get_google_array_01[$s][16] . " - " . $get_google_array_01[$s][0] . " - " . $get_google_array_01[$s][3] . " - " . $get_google_array_01[$s][3];
 	          
-				// ENTRY POINT: 
-				// - Output updated Description fields in to seperate import file for Awesome Miner
+
 
 	        }  
 
@@ -330,28 +330,56 @@ for($a = 0; $a < count($find_ip_awesomeminer); $a++) {
 
 	// Because we are in a loop, we need to only add if not already in array
 	// Another option would be array_unique after the loop
-	if (!in_array($to_add, $awesome_google_compare)) {
-		array_push($awesome_google_compare, $to_add);
+	if (!in_array($to_add, $descript_update)) {
+		array_push($descript_update, $to_add);
 	}
 
 }
 
-print_r($awesome_google_compare);
-die();
+//print_r($awesome_google_compare);
+//die();
 
 // ENTRY POINT: 
 // - Output updated Description fields in to seperate import file for Awesome Miner
+// Check awesomeminer for empty description fields, get ip of empty description fields
+for($q = 0; $q < count($get_awesomeminer_array_01); $q++) {
 
-// ENTRY POINTS: 
+  	for($r = 0; $r < count($get_awesomeminer_array_01[$q]); $r++) {
+
+  		for($s = 0; $s < count($descript_update); $s++) {
+
+	  		// Find Description tags that are empty
+	  		if (strpos($get_awesomeminer_array_01[$q][$r], "<Description />") !== false) {
+
+	  			$descript_update_explode = explode(" - ", $descript_update[$s]);
+			
+	  			if(strpos($get_awesomeminer_array_01[$q][$r], $descript_update_explode[0]) && strpos($descript_update[$s], $descript_update_explode[0])) {
+//DOESNT FUCKING WORK FUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUCK
+	  				echo $descript_update_explode[0] . "\n";
+
+	  			}
+
+	  		}
+
+	  	}
+
+	 }
+
+}
+
+
+// ENTRY POINT: 
+// - Output updated Description fields in to seperate import file for Awesome Miner
+// ENTRY POINT: 
 // - Get IP's that are in Google Sheets but not AwesomeMiner. Seperate this logic in to seperate file. Add these IP's in to seperate import file for Awesome Miner
 //
 // - Create master 2 dimensional array for all IP's. Could have a "matching" field. Could use this to list IP's that are not matched. Is this a good approach? Would it create un-needed complexicty?
 
-echo 'Searching for empty "<Description />" tags in AwesomeMiner export file.' . "\n";
-echo "Search found these matches in both AwesomeMiner and Google Sheets:\n";
-for($a = 0; $a < count($awesome_google_compare); $a++) {
-  echo $awesome_google_compare[$a] . "\n";
-}
+//echo 'Searching for empty "<Description />" tags in AwesomeMiner export file.' . "\n";
+//echo "Search found these matches in both AwesomeMiner and Google Sheets:\n";
+//for($a = 0; $a < count($awesome_google_compare); $a++) {
+//  echo $awesome_google_compare[$a] . "\n";
+//}
 
 //echo "Found " .  $match_count . " <Description /> fields\n";
 //echo "Found " . $match_count_not_present . " matches in Google Sheets\n";
