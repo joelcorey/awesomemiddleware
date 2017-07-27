@@ -340,23 +340,25 @@ for($a = 0; $a < count($find_ip_awesomeminer); $a++) {
 //print_r($get_awesomeminer_array_01);
 //die();
 
-// ENTRY POINT: 
-// - Output updated Description fields in to seperate import file for Awesome Miner
+
 // Check awesomeminer for empty description fields, get ip of empty description fields
 for($q = 0; $q < count($get_awesomeminer_array_01); $q++) {
 
-  	for($r = 0; $r < count($get_awesomeminer_array_01[$q]); $r++) {
+  	//for($r = 0; $r < count($get_awesomeminer_array_01[$q]); $r++) {
 
   		for($s = 0; $s < count($descript_update); $s++) {
 
 	  		// Find Description tags that are empty
-	  		if (strpos($get_awesomeminer_array_01[$q][$r], "<Description />") !== false) {
+	  		if (strpos($get_awesomeminer_array_01[$q][2], "<Description />") !== false) {
 
 	  			$descript_update_explode = explode(" - ", $descript_update[$s]);
 			
-	  			if(strpos($get_awesomeminer_array_01[$q][$r], $descript_update_explode[0]) == strpos($descript_update[$s], $descript_update_explode[0])) {
+	  			if(strpos($get_awesomeminer_array_01[$q][3], $descript_update_explode[0]) !== false) {
 
-	  				echo $descript_update_explode[0] . "\n";
+	  				// ENTRY POINT: 
+					// - Output updated Description fields in to seperate import file for Awesome Miner
+
+	  				$get_awesomeminer_array_01[$q][2] = "      <Description>" . $descript_update[$s] . "</Description>";
 
 	  			}
 
@@ -364,9 +366,12 @@ for($q = 0; $q < count($get_awesomeminer_array_01); $q++) {
 
 	  	}
 
-	 }
+	//}
 
 }
+
+print_r($get_awesomeminer_array_01);
+die();
 
 // ENTRY POINT: 
 // - Get IP's that are in Google Sheets but not AwesomeMiner. Seperate this logic in to seperate file. Add these IP's in to seperate import file for Awesome Miner
