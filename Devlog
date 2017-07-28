@@ -1,3 +1,5 @@
+Dev Log is very out of date, update pending
+
 Went with PHP instead of Node. Time was wasted on Node. There was an issue with Oauth, javascript promises, and transferring Google Sheets data in to an array. I am able to do this in PHP much more simply due to more complete documentation and more experience in PHP. I have made an attempt to keep code somewhat generic (such as avoiding foreach and using for i loops) for future porting if need be. Code is also commented.
 
 Gets Google Sheets data, puts in to array.
