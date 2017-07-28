@@ -381,11 +381,11 @@ for($d = 0; $d < count($get_awesomeminer_array_01); $d++) {
 
 //file_put_contents("out.txt", $array_flatten);
 
-file_put_contents("out.txt", implode("\n", $awesomeminer_array_00) . "\n");
+file_put_contents("new_import.awesome", implode("\n", $awesomeminer_array_00) . "\n");
 
-file_put_contents("out.txt", implode("\n", $array_flatten) . "\n", FILE_APPEND);
+file_put_contents("new_import.awesome", implode("\n", $array_flatten) . "\n", FILE_APPEND);
 
-file_put_contents("out.txt", implode("\n", $awesomeminer_array_02) . "\n", FILE_APPEND);
+file_put_contents("new_import.awesome", implode("\n", $awesomeminer_array_02) . "\n", FILE_APPEND);
 
 // ENTRY POINT: 
 // - Get IP's that are in Google Sheets but not AwesomeMiner. Seperate this logic in to seperate file. Add these IP's in to seperate import file for Awesome Miner
