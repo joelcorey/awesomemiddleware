@@ -373,6 +373,15 @@ $array_merge = array_merge($awesomeminer_array_00, $array_flatten, $awesomeminer
 // Output file for import in to Awesome
 file_put_contents("import.awesome", implode(PHP_EOL, $array_merge), FILE_APPEND);
 
+echo 'See "import.awesome" for updated <Description /> fields, then import' . "\n";
+$total_awesome =  count($get_awesomeminer_array_01);
+$total_google = count($get_google_array_01);
+$total_diff = $total_google - $total_awesome;
+
+echo "Total number of records in AwesomeMiner export file: " . $total_awesome . "\n";
+echo "Total number of records in Google Sheets (Detail): " . $total_google . "\n";
+echo "For a difference of: " . $total_diff . "\n";
+
 // ENTRY POINT: 
 // - Get IP's that are in Google Sheets but not AwesomeMiner. Seperate this logic in to seperate file. Add these IP's in to seperate import file for Awesome Miner
 //
