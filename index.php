@@ -241,6 +241,9 @@ $awesomeminer_array_00 = array_slice($get_awesomeminer_array, 0, get_difference(
 $awesomeminer_array_01 = array_slice($get_awesomeminer_array, $key_external_start + 1, get_difference($key_external_start, $key_external_end - 1));
 $awesomeminer_array_02 = array_slice($get_awesomeminer_array, $key_external_end, get_difference($key_external_end, 1 + array_search(end($get_awesomeminer_array), $get_awesomeminer_array)));
 
+//print_r($awesomeminer_array_02);
+//die();
+
 // Break up in to <ExternalMinerExport> ... </ExternalMinerExport> blocks
 // Depending on the miner, the tag "<WorkerSuffix />" can be present or absent
 // Therefore we have to do a more laborious search, rather than counting on a consistent number of 11
@@ -381,11 +384,11 @@ for($d = 0; $d < count($get_awesomeminer_array_01); $d++) {
 
 //file_put_contents("out.txt", $array_flatten);
 
-file_put_contents("new_import.awesome", implode("\n", $awesomeminer_array_00) . "\n");
+file_put_contents("import.awesome", implode("\n", $awesomeminer_array_00) . "\r\n");
 
-file_put_contents("new_import.awesome", implode("\n", $array_flatten) . "\n", FILE_APPEND);
+file_put_contents("import.awesome", implode("\n", $array_flatten) . "\r\n", FILE_APPEND);
 
-file_put_contents("new_import.awesome", implode("\n", $awesomeminer_array_02) . "\n", FILE_APPEND);
+file_put_contents("import.awesome", implode("\n", $awesomeminer_array_02) . "\r\n", FILE_APPEND);
 
 // ENTRY POINT: 
 // - Get IP's that are in Google Sheets but not AwesomeMiner. Seperate this logic in to seperate file. Add these IP's in to seperate import file for Awesome Miner
