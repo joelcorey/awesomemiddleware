@@ -230,14 +230,14 @@ function explode_ip_hostname($data) {
 $get_awesomeminer_array = file(glob("*.awesome")[0], FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
 // Need to define points to chop up awesome miner in to seperate arrays, for easier sorting:
-$key_external_start = array_search("  <ExternalMinerList>", $get_awesomeminer_array);
+$key_external_start = array_search('  <ExternalMinerList>', $get_awesomeminer_array);
 $key_external_end = array_search('  </ExternalMinerList>', $get_awesomeminer_array);
 // Uncomment for testing:
 //echo $key_external_start . "\n";
 //echo $key_external_end . "\n";
 
 // Seperate parts of array for drastically easier manipulation later
-$awesomeminer_array_00 = array_slice($get_awesomeminer_array, 0, get_difference(0, $key_external_start));
+$awesomeminer_array_00 = array_slice($get_awesomeminer_array, 0, get_difference(0, $key_external_start + 1));
 $awesomeminer_array_01 = array_slice($get_awesomeminer_array, $key_external_start + 1, get_difference($key_external_start, $key_external_end - 1));
 $awesomeminer_array_02 = array_slice($get_awesomeminer_array, $key_external_end, get_difference($key_external_end, 1 + array_search(end($get_awesomeminer_array), $get_awesomeminer_array)));
 

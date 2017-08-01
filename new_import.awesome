@@ -179,6 +179,7 @@
       </PoolMapList>
     </GroupPoolExport>
   </GroupPoolList>
+  <ExternalMinerList>
     <ExternalMinerExport>
       <ID>1000000001</ID>
       <Description>- GPU S - US01A - 10.0.29.50</Description>
@@ -1548,7 +1549,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000471</ID>
-      <Description>10.0.17.204 - 860 - A6 - A6</Description>
+      <Description>10.0.17.204 - 866 - A6 - A6</Description>
       <Hostname>10.0.17.204:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
