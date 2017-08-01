@@ -232,7 +232,8 @@ $get_awesomeminer_array = file(glob("*.awesome")[0], FILE_IGNORE_NEW_LINES | FIL
 // Need to define points to chop up awesome miner in to seperate arrays, for easier sorting:
 $key_external_start = array_search('  <ExternalMinerList>', $get_awesomeminer_array);
 $key_external_end = array_search('  </ExternalMinerList>', $get_awesomeminer_array);
-// Uncomment for testing:
+
+// For testing:
 //echo $key_external_start . "\n";
 //echo $key_external_end . "\n";
 
@@ -240,9 +241,6 @@ $key_external_end = array_search('  </ExternalMinerList>', $get_awesomeminer_arr
 $awesomeminer_array_00 = array_slice($get_awesomeminer_array, 0, get_difference(0, $key_external_start + 1));
 $awesomeminer_array_01 = array_slice($get_awesomeminer_array, $key_external_start + 1, get_difference($key_external_start, $key_external_end - 1));
 $awesomeminer_array_02 = array_slice($get_awesomeminer_array, $key_external_end, get_difference($key_external_end, 1 + array_search(end($get_awesomeminer_array), $get_awesomeminer_array)));
-
-//print_r($awesomeminer_array_02);
-//die();
 
 // Break up in to <ExternalMinerExport> ... </ExternalMinerExport> blocks
 // Depending on the miner, the tag "<WorkerSuffix />" can be present or absent
@@ -291,12 +289,13 @@ for($q = 0; $q < count($get_awesomeminer_array_01); $q++) {
   			$match_count += 1;
   		}
   	}
-  	// Reset variable to avoid non matching results being mis-labeled from previous succesful find
+  
+  // Reset variable to avoid non matching results being mis-labeled from previous succesful find
 	$awesome_miner_descript_ip = '';
 }
 
 
-// Uncomment these for testing:
+// For testing:
 //print_r($get_awesomeminer_array_01);
 //print_r($get_google_array_01);
 //echo count($get_awesomeminer_array_01) . "\n";
@@ -306,28 +305,25 @@ for($q = 0; $q < count($get_awesomeminer_array_01); $q++) {
 //die();
 
 
-
 // Check google sheets array for matching ip value
-// NOTE: this only gets matching ip values (ip's that are in AwesomeMiner AND Google Sheets). It does not get ip's that are in AwesomeMiner BUT NOT IN Google Sheets and or visa-versa.  
+// !! NOTE: this only gets matching ip values (ip's that are in AwesomeMiner AND Google Sheets). It does not get ip's that are in AwesomeMiner BUT NOT IN Google Sheets and or visa-versa.  
 // Array for IP's that are in Google and Awesome
 //$awesome_google_compare = [];
 $descript_update = [];
 for($a = 0; $a < count($find_ip_awesomeminer); $a++) {
 	for($s = 0; $s < count($get_google_array_01); $s++) {
 
-  			if ($find_ip_awesomeminer[$a] == $get_google_array_01[$s][16]) {
+		if ($find_ip_awesomeminer[$a] == $get_google_array_01[$s][16]) {
 
-  				// Use this for testing:
-  				//$to_add = "Match AwesomeMiner: " . $find_ip_awesomeminer[$a] . " Match Google: " . $get_google_array_01[$s][16];
+			// Use this for testing:
+			//$to_add = "Match AwesomeMiner: " . $find_ip_awesomeminer[$a] . " Match Google: " . $get_google_array_01[$s][16];
 
-  				// Use this for production:
-				$to_add = $get_google_array_01[$s][16] . " - " . $get_google_array_01[$s][0] . " - " . $get_google_array_01[$s][3] . " - " . $get_google_array_01[$s][3];
-	          
+			// Use this for production:
+		  $to_add = $get_google_array_01[$s][16] . " - " . $get_google_array_01[$s][0] . " - " . $get_google_array_01[$s][3] . " - " . $get_google_array_01[$s][3];
+        
+    }  
 
-
-	        }  
-
-	        // It is currently to difficult to do an else here, compute ip's that are not present with seperate logic
+    // It is currently to difficult to do an else here, compute ip's that are not present with seperate logic, see "to-do" or "entry points"
 
 	}
 
@@ -339,40 +335,30 @@ for($a = 0; $a < count($find_ip_awesomeminer); $a++) {
 
 }
 
-//print_r($awesome_google_compare);
-//print_r($get_awesomeminer_array_01);
-//die();
-
-
 // Check awesomeminer for empty description fields, get ip of empty description fields
 for($q = 0; $q < count($get_awesomeminer_array_01); $q++) {
 
-  		for($s = 0; $s < count($descript_update); $s++) {
+	for($s = 0; $s < count($descript_update); $s++) {
 
-	  		// Find Description tags that are empty
-	  		if (strpos($get_awesomeminer_array_01[$q][2], "<Description />") !== false) {
+		// Find Description tags that are empty
+		if (strpos($get_awesomeminer_array_01[$q][2], "<Description />") !== false) {
 
-	  			$descript_update_explode = explode(" - ", $descript_update[$s]);
-			
-	  			if(strpos($get_awesomeminer_array_01[$q][3], $descript_update_explode[0]) !== false) {
+			$descript_update_explode = explode(" - ", $descript_update[$s]);
+	
+			if(strpos($get_awesomeminer_array_01[$q][3], $descript_update_explode[0]) !== false) {
 
-	  				// ENTRY POINT: 
-					// - Output updated Description fields in to seperate import file for Awesome Miner
+        // Replace empy Description fields
+				$get_awesomeminer_array_01[$q][2] = "      <Description>" . $descript_update[$s] . "</Description>";
 
-	  				$get_awesomeminer_array_01[$q][2] = "      <Description>" . $descript_update[$s] . "</Description>";
+			}
 
-	  			}
+		}
 
-	  		}
-
-	  	}
+	}
 
 }
 
-//echo_array_multiD($get_awesomeminer_array_01);
-
-//file_put_contents("output.txt", print_r($get_awesomeminer_array_01, true));
-
+// Flatten 2D array, so that we can combine it with other arrays
 $array_flatten = [];
 for($d = 0; $d < count($get_awesomeminer_array_01); $d++) {
 	for($e = 0; $e < count($get_awesomeminer_array_01[$d]); $e++) {
@@ -382,20 +368,12 @@ for($d = 0; $d < count($get_awesomeminer_array_01); $d++) {
 	}
 } 
 
+// Combine arrays for output
 $array_merge = array_merge($awesomeminer_array_00, $array_flatten, $awesomeminer_array_02);
-//echo_array($array_merge);
+// Output file for import in to Awesome
 file_put_contents("import.awesome", implode(PHP_EOL, $array_merge), FILE_APPEND);
-
-
-
-// Out-dated code, leaving for reference:
-//file_put_contents("import.awesome", implode("\n", $awesomeminer_array_00) . "\r\n");
-//file_put_contents("import.awesome", implode("\n", $array_flatten) . "\r\n", FILE_APPEND);
-//file_put_contents("import.awesome", implode("\n", $awesomeminer_array_02) . "\r\n", FILE_APPEND);
 
 // ENTRY POINT: 
 // - Get IP's that are in Google Sheets but not AwesomeMiner. Seperate this logic in to seperate file. Add these IP's in to seperate import file for Awesome Miner
 //
 // - Create master 2 dimensional array for all IP's. Could have a "matching" field. Could use this to list IP's that are not matched. Is this a good approach? Would it create un-needed complexicty?
-
-
