@@ -357,6 +357,9 @@ for($q = 0; $q < count($get_awesomeminer_array_01); $q++) {
 
 }
 
+print_r($get_awesomeminer_array_01);
+die();
+
 // Flatten 2D array, so that we can combine it with other arrays
 $array_flatten = [];
 for($d = 0; $d < count($get_awesomeminer_array_01); $d++) {

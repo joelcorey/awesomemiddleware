@@ -842,7 +842,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000723</ID>
-      <Description>10.0.10.104 - 1701 - L3+ - L3+</Description>
+      <Description>10.0.10.104 - 1701 - L3+ - T5B1</Description>
       <Hostname>10.0.10.104:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -853,7 +853,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000492</ID>
-      <Description>10.0.10.108 - 855 - S7 - S7</Description>
+      <Description>10.0.10.108 - 855 - S7 - T7A3</Description>
       <Hostname>10.0.10.108:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -910,7 +910,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000741</ID>
-      <Description>10.0.10.132 - 1706 - L3+ - L3+</Description>
+      <Description>10.0.10.132 - 1706 - L3+ - T5C1</Description>
       <Hostname>10.0.10.132:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -965,7 +965,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000742</ID>
-      <Description>10.0.10.151 - 217 - S7 - S7</Description>
+      <Description>10.0.10.151 - 217 - S7 - T4D4</Description>
       <Hostname>10.0.10.151:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -976,7 +976,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000726</ID>
-      <Description>10.0.10.155 - 1703 - L3+ - L3+</Description>
+      <Description>10.0.10.155 - 1703 - L3+ - S5B7</Description>
       <Hostname>10.0.10.155:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -1116,7 +1116,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000499</ID>
-      <Description>10.0.10.234 - 867 - S9 - S9</Description>
+      <Description>10.0.10.234 - 867 - S9 - T7C2</Description>
       <Hostname>10.0.10.234:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -1138,7 +1138,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000703</ID>
-      <Description>10.0.10.235 - 868 - S9 - S9</Description>
+      <Description>10.0.10.235 - 868 - S9 - T7C1</Description>
       <Hostname>10.0.10.235:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -1160,7 +1160,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000704</ID>
-      <Description>10.0.10.236 - 870 - S9 - S9</Description>
+      <Description>10.0.10.236 - 870 - S9 - T5B7</Description>
       <Hostname>10.0.10.236:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -1182,7 +1182,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000705</ID>
-      <Description>10.0.10.237 - 869 - S9 - S9</Description>
+      <Description>10.0.10.237 - 869 - S9 - T4B7</Description>
       <Hostname>10.0.10.237:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -1227,7 +1227,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000728</ID>
-      <Description>10.0.10.251 - 1696 - L3+ - L3+</Description>
+      <Description>10.0.10.251 - 1696 - L3+ - T4B4</Description>
       <Hostname>10.0.10.251:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -1238,7 +1238,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000727</ID>
-      <Description>10.0.10.252 - 1697 - L3+ - L3+</Description>
+      <Description>10.0.10.252 - 1697 - L3+ - T4B5</Description>
       <Hostname>10.0.10.252:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -1249,7 +1249,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000659</ID>
-      <Description>10.0.10.3 - 857 - S7 - S7</Description>
+      <Description>10.0.10.3 - 857 - S7 - T2A4</Description>
       <Hostname>10.0.10.3:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -1260,7 +1260,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000720</ID>
-      <Description>10.0.10.3 - 857 - S7 - S7</Description>
+      <Description>10.0.10.3 - 857 - S7 - T2A4</Description>
       <Hostname>10.0.10.34:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -1283,7 +1283,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000721</ID>
-      <Description>10.0.10.41 - 1698 - L3+ - L3+</Description>
+      <Description>10.0.10.41 - 1698 - L3+ - T4C5</Description>
       <Hostname>10.0.10.41:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -1294,7 +1294,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000722</ID>
-      <Description>10.0.10.42 - 1699 - L3+ - L3+</Description>
+      <Description>10.0.10.42 - 1699 - L3+ - T4C6</Description>
       <Hostname>10.0.10.42:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -1305,7 +1305,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000739</ID>
-      <Description>10.0.10.5 - 1706 - L3+ - L3+</Description>
+      <Description>10.0.10.5 - 1706 - L3+ - T4D2</Description>
       <Hostname>10.0.10.5:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -1316,7 +1316,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000660</ID>
-      <Description>10.0.10.5 - 1706 - L3+ - L3+</Description>
+      <Description>10.0.10.5 - 1706 - L3+ - T4D2</Description>
       <Hostname>10.0.10.53:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -1339,7 +1339,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000661</ID>
-      <Description>10.0.10.70 - 826 - S7 - S7</Description>
+      <Description>10.0.10.70 - 826 - S7 - T6A3</Description>
       <Hostname>10.0.10.70:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -1374,7 +1374,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000662</ID>
-      <Description>10.0.10.73 - 829 - S9 - S9</Description>
+      <Description>10.0.10.73 - 829 - S9 - T4C3</Description>
       <Hostname>10.0.10.73:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -1517,7 +1517,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000663</ID>
-      <Description>10.0.10.88 - 841 - S9 - S9</Description>
+      <Description>10.0.10.88 - 841 - S9 - T4C4</Description>
       <Hostname>10.0.10.88:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -1540,7 +1540,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000664</ID>
-      <Description>10.0.10.90 - 843 - S7 - S7</Description>
+      <Description>10.0.10.90 - 843 - S7 - T4B2</Description>
       <Hostname>10.0.10.90:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -1645,7 +1645,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000412</ID>
-      <Description>10.0.11.102 - 563 - S7 - S7</Description>
+      <Description>10.0.11.102 - 563 - S7 - U1A2</Description>
       <Hostname>10.0.11.102:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -1691,7 +1691,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000505</ID>
-      <Description>10.0.11.122 - 634 - S9 - S9</Description>
+      <Description>10.0.11.122 - 634 - S9 - T1A2</Description>
       <Hostname>10.0.11.122:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -1702,7 +1702,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000413</ID>
-      <Description>10.0.11.125 - 693 - A4 - A4</Description>
+      <Description>10.0.11.125 - 693 - A4 - U3C3</Description>
       <Hostname>10.0.11.125:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -1737,7 +1737,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000671</ID>
-      <Description>10.0.11.135 - 1535 - L3+ - L3+</Description>
+      <Description>10.0.11.135 - 1535 - L3+ - U1C4</Description>
       <Hostname>10.0.11.135:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -1748,7 +1748,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000729</ID>
-      <Description>10.0.11.14 - 1702 - L3+ - L3+</Description>
+      <Description>10.0.11.14 - 1702 - L3+ - T1A1</Description>
       <Hostname>10.0.11.14:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -1759,7 +1759,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000715</ID>
-      <Description>10.0.11.14 - 1702 - L3+ - L3+</Description>
+      <Description>10.0.11.14 - 1702 - L3+ - T1A1</Description>
       <Hostname>10.0.11.141:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -1888,7 +1888,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000670</ID>
-      <Description>10.0.11.76 - 932 - S9 - S9</Description>
+      <Description>10.0.11.76 - 932 - S9 - U1B6</Description>
       <Hostname>10.0.11.76:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -1899,7 +1899,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000669</ID>
-      <Description>10.0.11.8 - 1536 - L3+ - L3+</Description>
+      <Description>10.0.11.8 - 1536 - L3+ - U1C5</Description>
       <Hostname>10.0.11.8:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -1910,7 +1910,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000416</ID>
-      <Description>10.0.11.8 - 1536 - L3+ - L3+</Description>
+      <Description>10.0.11.8 - 1536 - L3+ - U1C5</Description>
       <Hostname>10.0.11.85:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -1921,7 +1921,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000589</ID>
-      <Description>10.0.12.10 - 1516 - L3+ - L3+</Description>
+      <Description>10.0.12.10 - 1516 - L3+ - P6D6</Description>
       <Hostname>10.0.12.10:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -1932,7 +1932,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000749</ID>
-      <Description>10.0.12.10 - 1516 - L3+ - L3+</Description>
+      <Description>10.0.12.10 - 1516 - L3+ - P6D6</Description>
       <Hostname>10.0.12.104:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -1943,7 +1943,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000748</ID>
-      <Description>10.0.12.10 - 1516 - L3+ - L3+</Description>
+      <Description>10.0.12.10 - 1516 - L3+ - P6D6</Description>
       <Hostname>10.0.12.107:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -1954,7 +1954,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000599</ID>
-      <Description>10.0.12.11 - 1548 - S9 - S9</Description>
+      <Description>10.0.12.11 - 1548 - S9 - P6F3</Description>
       <Hostname>10.0.12.11:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -1965,7 +1965,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000689</ID>
-      <Description>10.0.12.11 - 1548 - S9 - S9</Description>
+      <Description>10.0.12.11 - 1548 - S9 - P6F3</Description>
       <Hostname>10.0.12.113:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -1976,7 +1976,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000750</ID>
-      <Description>10.0.12.11 - 1548 - S9 - S9</Description>
+      <Description>10.0.12.11 - 1548 - S9 - P6F3</Description>
       <Hostname>10.0.12.115:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -1987,7 +1987,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000600</ID>
-      <Description>10.0.12.12 - 1565 - S9 - S9</Description>
+      <Description>10.0.12.12 - 1565 - S9 - P5C5</Description>
       <Hostname>10.0.12.12:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -1998,7 +1998,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000594</ID>
-      <Description>10.0.12.13 - 997 - S9 - S9</Description>
+      <Description>10.0.12.13 - 997 - S9 - P5C3</Description>
       <Hostname>10.0.12.13:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2009,7 +2009,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000751</ID>
-      <Description>10.0.12.13 - 997 - S9 - S9</Description>
+      <Description>10.0.12.13 - 997 - S9 - P5C3</Description>
       <Hostname>10.0.12.132:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2020,7 +2020,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000690</ID>
-      <Description>10.0.12.13 - 997 - S9 - S9</Description>
+      <Description>10.0.12.13 - 997 - S9 - P5C3</Description>
       <Hostname>10.0.12.135:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2031,7 +2031,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000752</ID>
-      <Description>10.0.12.13 - 997 - S9 - S9</Description>
+      <Description>10.0.12.13 - 997 - S9 - P5C3</Description>
       <Hostname>10.0.12.139:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2042,7 +2042,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000595</ID>
-      <Description>10.0.12.14 - 1539 - S9 - S9</Description>
+      <Description>10.0.12.14 - 1539 - S9 - P6C7</Description>
       <Hostname>10.0.12.14:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2053,7 +2053,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000695</ID>
-      <Description>10.0.12.14 - 1539 - S9 - S9</Description>
+      <Description>10.0.12.14 - 1539 - S9 - P6C7</Description>
       <Hostname>10.0.12.140:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2064,7 +2064,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000753</ID>
-      <Description>10.0.12.14 - 1539 - S9 - S9</Description>
+      <Description>10.0.12.14 - 1539 - S9 - P6C7</Description>
       <Hostname>10.0.12.147:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2075,7 +2075,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000593</ID>
-      <Description>10.0.12.15 - 1512 - L3+ - L3+</Description>
+      <Description>10.0.12.15 - 1512 - L3+ - P6D9</Description>
       <Hostname>10.0.12.15:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2086,7 +2086,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000754</ID>
-      <Description>10.0.12.15 - 1512 - L3+ - L3+</Description>
+      <Description>10.0.12.15 - 1512 - L3+ - P6D9</Description>
       <Hostname>10.0.12.150:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2097,7 +2097,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000756</ID>
-      <Description>10.0.12.15 - 1512 - L3+ - L3+</Description>
+      <Description>10.0.12.15 - 1512 - L3+ - P6D9</Description>
       <Hostname>10.0.12.157:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2108,7 +2108,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000597</ID>
-      <Description>10.0.12.16 - 1554 - S9 - S9</Description>
+      <Description>10.0.12.16 - 1554 - S9 - P6G3</Description>
       <Hostname>10.0.12.16:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2119,7 +2119,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000755</ID>
-      <Description>10.0.12.16 - 1554 - S9 - S9</Description>
+      <Description>10.0.12.16 - 1554 - S9 - P6G3</Description>
       <Hostname>10.0.12.161:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2130,7 +2130,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000757</ID>
-      <Description>10.0.12.16 - 1554 - S9 - S9</Description>
+      <Description>10.0.12.16 - 1554 - S9 - P6G3</Description>
       <Hostname>10.0.12.163:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2141,7 +2141,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000601</ID>
-      <Description>10.0.12.17 - 1657 - S9 - S9</Description>
+      <Description>10.0.12.17 - 1657 - S9 - P5D8</Description>
       <Hostname>10.0.12.17:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2152,7 +2152,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000692</ID>
-      <Description>10.0.12.17 - 1657 - S9 - S9</Description>
+      <Description>10.0.12.17 - 1657 - S9 - P5D8</Description>
       <Hostname>10.0.12.172:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2163,7 +2163,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000691</ID>
-      <Description>10.0.12.17 - 1657 - S9 - S9</Description>
+      <Description>10.0.12.17 - 1657 - S9 - P5D8</Description>
       <Hostname>10.0.12.173:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2174,7 +2174,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000758</ID>
-      <Description>10.0.12.17 - 1657 - S9 - S9</Description>
+      <Description>10.0.12.17 - 1657 - S9 - P5D8</Description>
       <Hostname>10.0.12.175:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2185,7 +2185,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000598</ID>
-      <Description>10.0.12.18 - 994 - S9 - S9</Description>
+      <Description>10.0.12.18 - 994 - S9 - P6C2</Description>
       <Hostname>10.0.12.18:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2196,7 +2196,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000759</ID>
-      <Description>10.0.12.18 - 994 - S9 - S9</Description>
+      <Description>10.0.12.18 - 994 - S9 - P6C2</Description>
       <Hostname>10.0.12.180:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2207,7 +2207,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000602</ID>
-      <Description>10.0.12.19 - 1552 - S9 - S9</Description>
+      <Description>10.0.12.19 - 1552 - S9 - P6F8</Description>
       <Hostname>10.0.12.19:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2218,7 +2218,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000584</ID>
-      <Description>10.0.12.2 - 1514 - L3+ - L3+</Description>
+      <Description>10.0.12.2 - 1514 - L3+ - P6F9</Description>
       <Hostname>10.0.12.2:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2229,7 +2229,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000596</ID>
-      <Description>10.0.12.2 - 1514 - L3+ - L3+</Description>
+      <Description>10.0.12.2 - 1514 - L3+ - P6F9</Description>
       <Hostname>10.0.12.20:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2240,7 +2240,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000760</ID>
-      <Description>10.0.12.2 - 1514 - L3+ - L3+</Description>
+      <Description>10.0.12.2 - 1514 - L3+ - P6F9</Description>
       <Hostname>10.0.12.201:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2251,7 +2251,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000761</ID>
-      <Description>10.0.12.2 - 1514 - L3+ - L3+</Description>
+      <Description>10.0.12.2 - 1514 - L3+ - P6F9</Description>
       <Hostname>10.0.12.206:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2262,7 +2262,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000607</ID>
-      <Description>10.0.12.2 - 1514 - L3+ - L3+</Description>
+      <Description>10.0.12.2 - 1514 - L3+ - P6F9</Description>
       <Hostname>10.0.12.21:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2273,7 +2273,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000763</ID>
-      <Description>10.0.12.2 - 1514 - L3+ - L3+</Description>
+      <Description>10.0.12.2 - 1514 - L3+ - P6F9</Description>
       <Hostname>10.0.12.213:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2284,7 +2284,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000762</ID>
-      <Description>10.0.12.2 - 1514 - L3+ - L3+</Description>
+      <Description>10.0.12.2 - 1514 - L3+ - P6F9</Description>
       <Hostname>10.0.12.218:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2295,7 +2295,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000611</ID>
-      <Description>10.0.12.2 - 1514 - L3+ - L3+</Description>
+      <Description>10.0.12.2 - 1514 - L3+ - P6F9</Description>
       <Hostname>10.0.12.22:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2306,7 +2306,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000764</ID>
-      <Description>10.0.12.2 - 1514 - L3+ - L3+</Description>
+      <Description>10.0.12.2 - 1514 - L3+ - P6F9</Description>
       <Hostname>10.0.12.224:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2317,7 +2317,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000606</ID>
-      <Description>10.0.12.2 - 1514 - L3+ - L3+</Description>
+      <Description>10.0.12.2 - 1514 - L3+ - P6F9</Description>
       <Hostname>10.0.12.225:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2329,7 +2329,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000610</ID>
-      <Description>10.0.12.2 - 1514 - L3+ - L3+</Description>
+      <Description>10.0.12.2 - 1514 - L3+ - P6F9</Description>
       <Hostname>10.0.12.23:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2340,7 +2340,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000696</ID>
-      <Description>10.0.12.2 - 1514 - L3+ - L3+</Description>
+      <Description>10.0.12.2 - 1514 - L3+ - P6F9</Description>
       <Hostname>10.0.12.230:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2351,7 +2351,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000603</ID>
-      <Description>10.0.12.2 - 1514 - L3+ - L3+</Description>
+      <Description>10.0.12.2 - 1514 - L3+ - P6F9</Description>
       <Hostname>10.0.12.24:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2362,7 +2362,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000693</ID>
-      <Description>10.0.12.2 - 1514 - L3+ - L3+</Description>
+      <Description>10.0.12.2 - 1514 - L3+ - P6F9</Description>
       <Hostname>10.0.12.25:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2373,7 +2373,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000605</ID>
-      <Description>10.0.12.2 - 1514 - L3+ - L3+</Description>
+      <Description>10.0.12.2 - 1514 - L3+ - P6F9</Description>
       <Hostname>10.0.12.26:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2384,7 +2384,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000608</ID>
-      <Description>10.0.12.2 - 1514 - L3+ - L3+</Description>
+      <Description>10.0.12.2 - 1514 - L3+ - P6F9</Description>
       <Hostname>10.0.12.27:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2395,7 +2395,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000604</ID>
-      <Description>10.0.12.2 - 1514 - L3+ - L3+</Description>
+      <Description>10.0.12.2 - 1514 - L3+ - P6F9</Description>
       <Hostname>10.0.12.28:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2406,7 +2406,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000612</ID>
-      <Description>10.0.12.2 - 1514 - L3+ - L3+</Description>
+      <Description>10.0.12.2 - 1514 - L3+ - P6F9</Description>
       <Hostname>10.0.12.29:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2417,7 +2417,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000588</ID>
-      <Description>10.0.12.3 - 1555 - S9 - S9</Description>
+      <Description>10.0.12.3 - 1555 - S9 - P6G5</Description>
       <Hostname>10.0.12.3:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2428,7 +2428,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000609</ID>
-      <Description>10.0.12.3 - 1555 - S9 - S9</Description>
+      <Description>10.0.12.3 - 1555 - S9 - P6G5</Description>
       <Hostname>10.0.12.30:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2439,7 +2439,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000621</ID>
-      <Description>10.0.12.3 - 1555 - S9 - S9</Description>
+      <Description>10.0.12.3 - 1555 - S9 - P6G5</Description>
       <Hostname>10.0.12.31:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2450,7 +2450,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000613</ID>
-      <Description>10.0.12.3 - 1555 - S9 - S9</Description>
+      <Description>10.0.12.3 - 1555 - S9 - P6G5</Description>
       <Hostname>10.0.12.32:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2461,7 +2461,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000617</ID>
-      <Description>10.0.12.3 - 1555 - S9 - S9</Description>
+      <Description>10.0.12.3 - 1555 - S9 - P6G5</Description>
       <Hostname>10.0.12.33:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2472,7 +2472,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000688</ID>
-      <Description>10.0.12.3 - 1555 - S9 - S9</Description>
+      <Description>10.0.12.3 - 1555 - S9 - P6G5</Description>
       <Hostname>10.0.12.34:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2483,7 +2483,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000616</ID>
-      <Description>10.0.12.3 - 1555 - S9 - S9</Description>
+      <Description>10.0.12.3 - 1555 - S9 - P6G5</Description>
       <Hostname>10.0.12.36:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2494,7 +2494,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000615</ID>
-      <Description>10.0.12.3 - 1555 - S9 - S9</Description>
+      <Description>10.0.12.3 - 1555 - S9 - P6G5</Description>
       <Hostname>10.0.12.37:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2505,7 +2505,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000614</ID>
-      <Description>10.0.12.3 - 1555 - S9 - S9</Description>
+      <Description>10.0.12.3 - 1555 - S9 - P6G5</Description>
       <Hostname>10.0.12.38:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2516,7 +2516,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000694</ID>
-      <Description>10.0.12.3 - 1555 - S9 - S9</Description>
+      <Description>10.0.12.3 - 1555 - S9 - P6G5</Description>
       <Hostname>10.0.12.39:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2527,7 +2527,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000592</ID>
-      <Description>10.0.12.4 - 1564 - S9 - S9</Description>
+      <Description>10.0.12.4 - 1564 - S9 - P5C4</Description>
       <Hostname>10.0.12.4:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2538,7 +2538,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000717</ID>
-      <Description>10.0.12.4 - 1564 - S9 - S9</Description>
+      <Description>10.0.12.4 - 1564 - S9 - P5C4</Description>
       <Hostname>10.0.12.40:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2549,7 +2549,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000630</ID>
-      <Description>10.0.12.4 - 1564 - S9 - S9</Description>
+      <Description>10.0.12.4 - 1564 - S9 - P5C4</Description>
       <Hostname>10.0.12.41:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2560,7 +2560,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000625</ID>
-      <Description>10.0.12.4 - 1564 - S9 - S9</Description>
+      <Description>10.0.12.4 - 1564 - S9 - P5C4</Description>
       <Hostname>10.0.12.42:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2571,7 +2571,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000631</ID>
-      <Description>10.0.12.4 - 1564 - S9 - S9</Description>
+      <Description>10.0.12.4 - 1564 - S9 - P5C4</Description>
       <Hostname>10.0.12.43:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2582,7 +2582,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000624</ID>
-      <Description>10.0.12.4 - 1564 - S9 - S9</Description>
+      <Description>10.0.12.4 - 1564 - S9 - P5C4</Description>
       <Hostname>10.0.12.44:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2593,7 +2593,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000626</ID>
-      <Description>10.0.12.4 - 1564 - S9 - S9</Description>
+      <Description>10.0.12.4 - 1564 - S9 - P5C4</Description>
       <Hostname>10.0.12.45:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2604,7 +2604,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000627</ID>
-      <Description>10.0.12.4 - 1564 - S9 - S9</Description>
+      <Description>10.0.12.4 - 1564 - S9 - P5C4</Description>
       <Hostname>10.0.12.46:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2615,7 +2615,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000622</ID>
-      <Description>10.0.12.4 - 1564 - S9 - S9</Description>
+      <Description>10.0.12.4 - 1564 - S9 - P5C4</Description>
       <Hostname>10.0.12.47:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2626,7 +2626,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000629</ID>
-      <Description>10.0.12.4 - 1564 - S9 - S9</Description>
+      <Description>10.0.12.4 - 1564 - S9 - P5C4</Description>
       <Hostname>10.0.12.48:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2637,7 +2637,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000628</ID>
-      <Description>10.0.12.4 - 1564 - S9 - S9</Description>
+      <Description>10.0.12.4 - 1564 - S9 - P5C4</Description>
       <Hostname>10.0.12.49:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2648,7 +2648,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000587</ID>
-      <Description>10.0.12.5 - 1660 - S9 - S9</Description>
+      <Description>10.0.12.5 - 1660 - S9 - P5E5</Description>
       <Hostname>10.0.12.5:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2659,7 +2659,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000623</ID>
-      <Description>10.0.12.5 - 1660 - S9 - S9</Description>
+      <Description>10.0.12.5 - 1660 - S9 - P5E5</Description>
       <Hostname>10.0.12.50:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2670,7 +2670,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000632</ID>
-      <Description>10.0.12.5 - 1660 - S9 - S9</Description>
+      <Description>10.0.12.5 - 1660 - S9 - P5E5</Description>
       <Hostname>10.0.12.51:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2681,7 +2681,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000634</ID>
-      <Description>10.0.12.5 - 1660 - S9 - S9</Description>
+      <Description>10.0.12.5 - 1660 - S9 - P5E5</Description>
       <Hostname>10.0.12.52:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2692,7 +2692,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000639</ID>
-      <Description>10.0.12.5 - 1660 - S9 - S9</Description>
+      <Description>10.0.12.5 - 1660 - S9 - P5E5</Description>
       <Hostname>10.0.12.53:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2703,7 +2703,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000637</ID>
-      <Description>10.0.12.5 - 1660 - S9 - S9</Description>
+      <Description>10.0.12.5 - 1660 - S9 - P5E5</Description>
       <Hostname>10.0.12.54:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2714,7 +2714,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000635</ID>
-      <Description>10.0.12.5 - 1660 - S9 - S9</Description>
+      <Description>10.0.12.5 - 1660 - S9 - P5E5</Description>
       <Hostname>10.0.12.55:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2725,7 +2725,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000638</ID>
-      <Description>10.0.12.5 - 1660 - S9 - S9</Description>
+      <Description>10.0.12.5 - 1660 - S9 - P5E5</Description>
       <Hostname>10.0.12.56:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2736,7 +2736,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000640</ID>
-      <Description>10.0.12.5 - 1660 - S9 - S9</Description>
+      <Description>10.0.12.5 - 1660 - S9 - P5E5</Description>
       <Hostname>10.0.12.57:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2747,7 +2747,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000633</ID>
-      <Description>10.0.12.5 - 1660 - S9 - S9</Description>
+      <Description>10.0.12.5 - 1660 - S9 - P5E5</Description>
       <Hostname>10.0.12.58:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2758,7 +2758,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000641</ID>
-      <Description>10.0.12.5 - 1660 - S9 - S9</Description>
+      <Description>10.0.12.5 - 1660 - S9 - P5E5</Description>
       <Hostname>10.0.12.59:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2769,7 +2769,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000586</ID>
-      <Description>10.0.12.6 - 1659 - S9 - S9</Description>
+      <Description>10.0.12.6 - 1659 - S9 - P5E3</Description>
       <Hostname>10.0.12.6:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2780,7 +2780,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000636</ID>
-      <Description>10.0.12.6 - 1659 - S9 - S9</Description>
+      <Description>10.0.12.6 - 1659 - S9 - P5E3</Description>
       <Hostname>10.0.12.60:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2791,7 +2791,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000645</ID>
-      <Description>10.0.12.6 - 1659 - S9 - S9</Description>
+      <Description>10.0.12.6 - 1659 - S9 - P5E3</Description>
       <Hostname>10.0.12.61:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2802,7 +2802,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000650</ID>
-      <Description>10.0.12.6 - 1659 - S9 - S9</Description>
+      <Description>10.0.12.6 - 1659 - S9 - P5E3</Description>
       <Hostname>10.0.12.62:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2813,7 +2813,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000648</ID>
-      <Description>10.0.12.6 - 1659 - S9 - S9</Description>
+      <Description>10.0.12.6 - 1659 - S9 - P5E3</Description>
       <Hostname>10.0.12.63:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2824,7 +2824,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000651</ID>
-      <Description>10.0.12.6 - 1659 - S9 - S9</Description>
+      <Description>10.0.12.6 - 1659 - S9 - P5E3</Description>
       <Hostname>10.0.12.64:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2835,7 +2835,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000649</ID>
-      <Description>10.0.12.6 - 1659 - S9 - S9</Description>
+      <Description>10.0.12.6 - 1659 - S9 - P5E3</Description>
       <Hostname>10.0.12.65:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2846,7 +2846,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000644</ID>
-      <Description>10.0.12.6 - 1659 - S9 - S9</Description>
+      <Description>10.0.12.6 - 1659 - S9 - P5E3</Description>
       <Hostname>10.0.12.66:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2857,7 +2857,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000647</ID>
-      <Description>10.0.12.6 - 1659 - S9 - S9</Description>
+      <Description>10.0.12.6 - 1659 - S9 - P5E3</Description>
       <Hostname>10.0.12.67:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2868,7 +2868,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000642</ID>
-      <Description>10.0.12.6 - 1659 - S9 - S9</Description>
+      <Description>10.0.12.6 - 1659 - S9 - P5E3</Description>
       <Hostname>10.0.12.68:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2880,7 +2880,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000643</ID>
-      <Description>10.0.12.6 - 1659 - S9 - S9</Description>
+      <Description>10.0.12.6 - 1659 - S9 - P5E3</Description>
       <Hostname>10.0.12.69:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2902,7 +2902,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000646</ID>
-      <Description>10.0.12.70 - 999 - S9 - S9</Description>
+      <Description>10.0.12.70 - 999 - S9 - P6D7</Description>
       <Hostname>10.0.12.70:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2913,7 +2913,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000655</ID>
-      <Description>10.0.12.71 - 1545 - S9 - S9</Description>
+      <Description>10.0.12.71 - 1545 - S9 - P6E2</Description>
       <Hostname>10.0.12.71:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2958,7 +2958,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000653</ID>
-      <Description>10.0.12.75 - 1523 - L3+ - L3+</Description>
+      <Description>10.0.12.75 - 1523 - L3+ - P6G1</Description>
       <Hostname>10.0.12.75:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2969,7 +2969,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000744</ID>
-      <Description>10.0.12.79 - 1569 - L3+ - L3+</Description>
+      <Description>10.0.12.79 - 1569 - L3+ - P4D6</Description>
       <Hostname>10.0.12.79:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2980,7 +2980,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000591</ID>
-      <Description>10.0.12.8 - 1540 - S9 - S9</Description>
+      <Description>10.0.12.8 - 1540 - S9 - P6C8</Description>
       <Hostname>10.0.12.8:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -2991,7 +2991,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000590</ID>
-      <Description>10.0.12.9 - 1542 - S9 - S9</Description>
+      <Description>10.0.12.9 - 1542 - S9 - P6D4</Description>
       <Hostname>10.0.12.9:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -3002,7 +3002,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000746</ID>
-      <Description>10.0.12.9 - 1542 - S9 - S9</Description>
+      <Description>10.0.12.9 - 1542 - S9 - P6D4</Description>
       <Hostname>10.0.12.91:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -3013,7 +3013,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000618</ID>
-      <Description>10.0.12.9 - 1542 - S9 - S9</Description>
+      <Description>10.0.12.9 - 1542 - S9 - P6D4</Description>
       <Hostname>10.0.12.93:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -3025,7 +3025,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000747</ID>
-      <Description>10.0.12.9 - 1542 - S9 - S9</Description>
+      <Description>10.0.12.9 - 1542 - S9 - P6D4</Description>
       <Hostname>10.0.12.97:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -3132,7 +3132,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000673</ID>
-      <Description>10.0.15.158 - 960 - S9 - S9</Description>
+      <Description>10.0.15.158 - 960 - S9 - S1C4</Description>
       <Hostname>10.0.15.158:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -3191,7 +3191,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000707</ID>
-      <Description>10.0.15.31 - 1529 - L3+ - L3+</Description>
+      <Description>10.0.15.31 - 1529 - L3+ - S5C6</Description>
       <Hostname>10.0.15.31:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -3202,7 +3202,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000718</ID>
-      <Description>10.0.15.33 - 1576 - L3+ - L3+</Description>
+      <Description>10.0.15.33 - 1576 - L3+ - S5D4</Description>
       <Hostname>10.0.15.33:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -3369,7 +3369,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000469</ID>
-      <Description>10.0.17.131 - 861 - L3+ - L3+</Description>
+      <Description>10.0.17.131 - 861 - L3+ - T3E5</Description>
       <Hostname>10.0.17.131:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -3392,7 +3392,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000676</ID>
-      <Description>10.0.17.172 - 1532 - L3+ - L3+</Description>
+      <Description>10.0.17.172 - 1532 - L3+ - S1D5</Description>
       <Hostname>10.0.17.172:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -3403,7 +3403,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000677</ID>
-      <Description>10.0.17.175 - 1501 - L3+ - L3+</Description>
+      <Description>10.0.17.175 - 1501 - L3+ - S1D1</Description>
       <Hostname>10.0.17.175:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -3414,7 +3414,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000471</ID>
-      <Description>10.0.17.204 - 866 - A6 - A6</Description>
+      <Description>10.0.17.204 - 866 - A6 - T3E</Description>
       <Hostname>10.0.17.204:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -3449,7 +3449,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000678</ID>
-      <Description>10.0.17.209 - 964 - L3+ - L3+</Description>
+      <Description>10.0.17.209 - 964 - L3+ - S1D1</Description>
       <Hostname>10.0.17.209:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -3484,7 +3484,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000674</ID>
-      <Description>10.0.17.48 - 1504 - L3+ - L3+</Description>
+      <Description>10.0.17.48 - 1504 - L3+ - S1D3</Description>
       <Hostname>10.0.17.48:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -3495,7 +3495,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000468</ID>
-      <Description>10.0.17.53 - 858 - S7 - S7</Description>
+      <Description>10.0.17.53 - 858 - S7 - T3E4</Description>
       <Hostname>10.0.17.53:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -3506,7 +3506,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000675</ID>
-      <Description>10.0.17.79 - 1503 - L3+ - L3+</Description>
+      <Description>10.0.17.79 - 1503 - L3+ - S1D2</Description>
       <Hostname>10.0.17.79:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -3552,7 +3552,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000658</ID>
-      <Description>10.0.22.136 - 1505 - L3+ - L3+</Description>
+      <Description>10.0.22.136 - 1505 - L3+ - S6B1</Description>
       <Hostname>10.0.22.136:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -3563,7 +3563,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000683</ID>
-      <Description>10.0.22.160 - 871 - S9 - S9</Description>
+      <Description>10.0.22.160 - 871 - S9 - S6C5</Description>
       <Hostname>10.0.22.160:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -3585,7 +3585,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000684</ID>
-      <Description>10.0.22.161 - 872 - S9 - S9</Description>
+      <Description>10.0.22.161 - 872 - S9 - S6C6</Description>
       <Hostname>10.0.22.161:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -3607,7 +3607,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000685</ID>
-      <Description>10.0.22.173 - 965 - L3+ - L3+</Description>
+      <Description>10.0.22.173 - 965 - L3+ - S6A4</Description>
       <Hostname>10.0.22.173:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -3618,7 +3618,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000686</ID>
-      <Description>10.0.22.208 - 1509 - L3+ - L3+</Description>
+      <Description>10.0.22.208 - 1509 - L3+ - S6B2</Description>
       <Hostname>10.0.22.208:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -3629,7 +3629,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000687</ID>
-      <Description>10.0.22.236 - 1531 - L3+ - L3+</Description>
+      <Description>10.0.22.236 - 1531 - L3+ - S6B5</Description>
       <Hostname>10.0.22.236:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -3640,7 +3640,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000656</ID>
-      <Description>10.0.22.29 - 1508 - L3+ - L3+</Description>
+      <Description>10.0.22.29 - 1508 - L3+ - S6B4</Description>
       <Hostname>10.0.22.29:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -3651,7 +3651,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000657</ID>
-      <Description>10.0.22.35 - 1507 - L3+ - L3+</Description>
+      <Description>10.0.22.35 - 1507 - L3+ - S6B3</Description>
       <Hostname>10.0.22.35:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -3662,7 +3662,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000680</ID>
-      <Description>10.0.22.46 - 1530 - L3+ - L3+</Description>
+      <Description>10.0.22.46 - 1530 - L3+ - S6B6</Description>
       <Hostname>10.0.22.46:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -3684,7 +3684,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000681</ID>
-      <Description>10.0.22.78 - 159 - S7 - S7</Description>
+      <Description>10.0.22.78 - 159 - S7 - S10C2</Description>
       <Hostname>10.0.22.78:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -3767,7 +3767,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000682</ID>
-      <Description>10.0.22.91 - 886 - S9 - S9</Description>
+      <Description>10.0.22.91 - 886 - S9 - S9B7</Description>
       <Hostname>10.0.22.91:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -3934,7 +3934,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000732</ID>
-      <Description>10.0.28.100 - 873 - S9 - S9</Description>
+      <Description>10.0.28.100 - 873 - S9 - S4C3</Description>
       <Hostname>10.0.28.100:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -3956,7 +3956,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000733</ID>
-      <Description>10.0.28.101 - 874 - S9 - S9</Description>
+      <Description>10.0.28.101 - 874 - S9 - S4C4</Description>
       <Hostname>10.0.28.101:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -4011,7 +4011,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000734</ID>
-      <Description>10.0.28.182 - 953 - S9 - S9</Description>
+      <Description>10.0.28.182 - 953 - S9 - S3C6</Description>
       <Hostname>10.0.28.182:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -4044,7 +4044,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000730</ID>
-      <Description>10.0.28.72 - 954 - S9 - S9</Description>
+      <Description>10.0.28.72 - 954 - S9 - S3D6</Description>
       <Hostname>10.0.28.72:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -4114,7 +4114,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000731</ID>
-      <Description>10.0.28.84 - 880 - S9 - S9</Description>
+      <Description>10.0.28.84 - 880 - S9 - S3D1</Description>
       <Hostname>10.0.28.84:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -4197,7 +4197,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000735</ID>
-      <Description>10.0.29.10 - 950 - S9 - S9</Description>
+      <Description>10.0.29.10 - 950 - S9 - U13A4</Description>
       <Hostname>10.0.29.10:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -4220,7 +4220,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000737</ID>
-      <Description>10.0.29.137 - 949 - S9 - S9</Description>
+      <Description>10.0.29.137 - 949 - S9 - U13A3</Description>
       <Hostname>10.0.29.137:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -4243,7 +4243,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000738</ID>
-      <Description>10.0.29.199 - 951 - S9 - S9</Description>
+      <Description>10.0.29.199 - 951 - S9 - U13C5</Description>
       <Hostname>10.0.29.199:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
@@ -4277,7 +4277,7 @@
     </ExternalMinerExport>
     <ExternalMinerExport>
       <ID>1000000736</ID>
-      <Description>10.0.29.90 - 948 - S9 - S9</Description>
+      <Description>10.0.29.90 - 948 - S9 - U13A2</Description>
       <Hostname>10.0.29.90:4028</Hostname>
       <Algorithm>Unspecified</Algorithm>
       <EngineType>CgMinerCustom</EngineType>
