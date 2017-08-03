@@ -7,4 +7,6 @@ Only have 1 ".awesome" file in directory at a time for now.
   
 Run "php index.php" in command prompt.  
   
-DO NOT import yet, still needs verification and testing.  
+DO NOT import yet, still needs verification and testing.
+
+When testing, it is temporarily necessary to delete the "import.awesome" file each time you run. 
