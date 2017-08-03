@@ -144,7 +144,7 @@ if (count($values) == 0) {
 
 function echo_array($arr) {
 	for($q = 0; $q < count($arr); $q++) {
-		echo $arr[$q];
+		echo $arr[$q] . "\n";
 	}
 }
 
@@ -187,9 +187,9 @@ function get_difference($var1, $var2) {
 function is_set($arr, $offset) {
 	// Without checking if array offset is set PHP will return an error on empty array members
     if(isset($arr[$offset])) {
-        return $arr[$offset];
+      return $arr[$offset];
     } else {
-        return '';
+      return '';
     }
 }
 
@@ -294,7 +294,6 @@ for($q = 0; $q < count($get_awesomeminer_array_01); $q++) {
 	$awesome_miner_descript_ip = '';
 }
 
-
 // For testing:
 //print_r($get_awesomeminer_array_01);
 //print_r($get_google_array_01);
@@ -302,8 +301,8 @@ for($q = 0; $q < count($get_awesomeminer_array_01); $q++) {
 //echo count($get_google_array_01) . "\n";
 //echo_array_multiD($get_awesomeminer_array_01);
 //echo_array_multiD($get_google_array_01);
+//print_r($find_ip_awesomeminer);
 //die();
-
 
 // Check google sheets array for matching ip value
 // !! NOTE: this only gets matching ip values (ip's that are in AwesomeMiner AND Google Sheets). It does not get ip's that are in AwesomeMiner BUT NOT IN Google Sheets and or visa-versa.  
@@ -319,7 +318,7 @@ for($a = 0; $a < count($find_ip_awesomeminer); $a++) {
 			//$to_add = "Match AwesomeMiner: " . $find_ip_awesomeminer[$a] . " Match Google: " . $get_google_array_01[$s][16];
 
 			// Use this for production:
-		  $to_add = $get_google_array_01[$s][16] . " - " . $get_google_array_01[$s][0] . " - " . $get_google_array_01[$s][3] . " - " . $get_google_array_01[$s][3];
+		  $to_add = $get_google_array_01[$s][16] . " - " . $get_google_array_01[$s][0] . " - " . $get_google_array_01[$s][3] . " - " . $get_google_array_01[$s][6];
         
     }  
 
@@ -373,11 +372,8 @@ $array_merge = array_merge($awesomeminer_array_00, $array_flatten, $awesomeminer
 // Output file for import in to Awesome
 file_put_contents("import.awesome", implode(PHP_EOL, $array_merge), FILE_APPEND);
 
+// Output to terminal
 echo 'See "import.awesome" for updated <Description /> fields, then import' . "\n";
-$total_awesome =  count($get_awesomeminer_array_01);
-$total_google = count($get_google_array_01);
-$total_diff = $total_google - $total_awesome;
-
 echo "Total number of records in AwesomeMiner export file: " . $total_awesome . "\n";
 echo "Total number of records in Google Sheets (Detail): " . $total_google . "\n";
 echo "For a difference of: " . $total_diff . "\n";
