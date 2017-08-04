@@ -307,92 +307,38 @@ for($q = 0; $q < count($get_awesomeminer_array_01); $q++) {
 
   	}
   
-  // Reset variable to avoid non matching results being mis-labeled from previous succesful find
+  // Reset variable to prevent non matching results being mis-labeled from previous succesful find
 	$awesome_miner_descript_ip = '';
+
 }
 
 // For testing:
-print_r($get_awesomeminer_array_01);
-//print_r($get_google_array_01);
-die();
-
-// Check google sheets array for matching ip value
-// !! NOTE: this only gets matching ip values (ip's that are in AwesomeMiner AND Google Sheets). It does not get ip's that are in AwesomeMiner BUT NOT IN Google Sheets and or visa-versa.  
-// Array for IP's that are in Google and Awesome
-//$awesome_google_compare = [];
-//$descript_update = [];
-//for($a = 0; $a < count($find_ip_awesomeminer); $a++) {
-//	for($s = 0; $s < count($get_google_array_01); $s++) {
-//
-//		if ($find_ip_awesomeminer[$a] == $get_google_array_01[$s][16]) {
-//
-			// Use this for testing:
-			//$to_add = "Match AwesomeMiner: " . $find_ip_awesomeminer[$a] . " Match Google: " . $get_google_array_01[$s][16];
-
-			// Use this for production:
-//		  $to_add = $get_google_array_01[$s][16] . " - " . $get_google_array_01[$s][0] . " - " . $get_google_array_01[$s][3] . " - " . $get_google_array_01[$s][6];
-//
-//    }  
-
-    // It is currently to difficult to do an else here, compute ip's that are not present with seperate logic, see "to-do" or "entry points"
-//
-//	}
-//
-	// Because we are in a loop, we need to only add if not already in array
-	// Another option would be array_unique after the loop
-//	if (!in_array($to_add, $descript_update)) {
-//		array_push($descript_update, $to_add);
-//	}
-//
-//}
-//
-// Check awesomeminer for empty description fields, get ip of empty description fields
-//for($q = 0; $q < count($get_awesomeminer_array_01); $q++) {
-//
-//	for($s = 0; $s < count($descript_update); $s++) {
-//
-		// Find Description tags, we want to replace all Descriptions each time we run this
-    // This solves both empty and mis-nomenclatured Descriptions
-//		if (strpos($get_awesomeminer_array_01[$q][2], "Description") !== false) {
-//
-//			$descript_update_explode = explode(" - ", $descript_update[$s]);
-//	
-//			if(strpos($get_awesomeminer_array_01[$q][3], $descript_update_explode[0]) !== false) {
-//
-//        // Replace empy Description fields
-//				$get_awesomeminer_array_01[$q][2] = "      <Description>" . $descript_update[$s] . "</Description>";
-//
-//			}
-//
-//		}
-//
-//	}
-//
-//}
-
 //print_r($get_awesomeminer_array_01);
+//print_r($get_google_array_01);
 //die();
 
 // Flatten 2D array, so that we can combine it with other arrays
-//$array_flatten = [];
-//for($d = 0; $d < count($get_awesomeminer_array_01); $d++) {
-//	for($e = 0; $e < count($get_awesomeminer_array_01[$d]); $e++) {
-//		
-//		array_push($array_flatten, $get_awesomeminer_array_01[$d][$e]);
-//
-//	}
-//} 
-//
+$array_flatten = [];
+for($d = 0; $d < count($get_awesomeminer_array_01); $d++) {
+  for($e = 0; $e < count($get_awesomeminer_array_01[$d]); $e++) {
+
+    array_push($array_flatten, $get_awesomeminer_array_01[$d][$e]);
+
+  }
+} 
+
 // Combine arrays for output
-//$array_merge = array_merge($awesomeminer_array_00, $array_flatten, $awesomeminer_array_02);
+$array_merge = array_merge($awesomeminer_array_00, $array_flatten, $awesomeminer_array_02);
+// Delete file for import if exists
+unlink("import.awesome"); 
 // Output file for import in to Awesome
-//file_put_contents("import.awesome", implode(PHP_EOL, $array_merge), FILE_APPEND);
+file_put_contents("import.awesome", implode(PHP_EOL, $array_merge), FILE_APPEND);
 
 // Output to terminal
-//echo 'See "import.awesome" for updated <Description /> fields, then import' . "\n";
-//echo "Total number of records in AwesomeMiner export file: " . $total_awesome . "\n";
-//echo "Total number of records in Google Sheets (Detail): " . $total_google . "\n";
-//echo "For a difference of: " . $total_diff . "\n";
+echo 'See "import.awesome" for updated <Description></Description> fields, then import' . "\n";
+echo "Total number of records in AwesomeMiner export file: " . $total_awesome . "\n";
+echo "Total number of records in Google Sheets (Detail): " . $total_google . "\n";
+echo "For a difference of: " . $total_diff . "\n";
 
 // ENTRY POINT: 
 // - Get IP's that are in Google Sheets but not AwesomeMiner. Seperate this logic in to seperate file. Add these IP's in to seperate import file for Awesome Miner
