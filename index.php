@@ -269,13 +269,18 @@ $total_diff = $total_google - $total_awesome;
 
 $match_count = 0;
 
-// Check awesomeminer for empty description fields, get ip of empty description fields
+// For testing:
+//print_r($get_awesomeminer_array_01);
+//print_r($get_google_array_01);
+//die();
+
+// Check awesomeminer for description fields, get ip of empty description fields
 for($q = 0; $q < count($get_awesomeminer_array_01); $q++) {
 
   	for($r = 0; $r < count($get_awesomeminer_array_01[$q]); $r++) {
 
-  		// Find Description tags that are empty
-  		if (strpos($get_awesomeminer_array_01[$q][$r], "<Description />") !== false) {
+  		// Find Description tags 
+  		if (strpos($get_awesomeminer_array_01[$q][$r], "Description") !== false) {
 
   			// The third tag in this array is the hostname, get ip for comparison against google
   			// Also get tid of hostname tages
@@ -284,99 +289,53 @@ for($q = 0; $q < count($get_awesomeminer_array_01); $q++) {
   			// Get rid of colon and port number
   			$awesome_miner_descript_ip = explode_ip_hostname($awesome_miner_description);
   			
-  			// Store matches in a seperate array
-  			$find_ip_awesomeminer[$match_count] = $awesome_miner_descript_ip;
-  			$match_count += 1;
+        // Entry point:
+  			// Go through get_google_array_01 here and update get_awesomeminer_array_01
+        // Directly replace description fields here, instead of all this extra bullshit below
+
+        for($s = 0; $s < count($get_google_array_01); $s++) {
+
+          if ($awesome_miner_descript_ip == $get_google_array_01[$s][16]) {
+            // DO STUFF!!! WEEEEEEEEEEEEE
+
+            $get_awesomeminer_array_01[$q][$r] = "      <Description>" . $get_google_array_01[$s][16] . " - " . $get_google_array_01[$s][0] . " - " . $get_google_array_01[$s][3] . " - " . $get_google_array_01[$s][6] . "</Description>";
+          }
+
+        }
+
   		}
+
   	}
   
-  // Reset variable to avoid non matching results being mis-labeled from previous succesful find
+  // Reset variable to prevent non matching results being mis-labeled from previous succesful find
 	$awesome_miner_descript_ip = '';
+
 }
 
 // For testing:
 //print_r($get_awesomeminer_array_01);
 //print_r($get_google_array_01);
-//echo count($get_awesomeminer_array_01) . "\n";
-//echo count($get_google_array_01) . "\n";
-//echo_array_multiD($get_awesomeminer_array_01);
-//echo_array_multiD($get_google_array_01);
-//print_r($find_ip_awesomeminer);
 //die();
-
-// Check google sheets array for matching ip value
-// !! NOTE: this only gets matching ip values (ip's that are in AwesomeMiner AND Google Sheets). It does not get ip's that are in AwesomeMiner BUT NOT IN Google Sheets and or visa-versa.  
-// Array for IP's that are in Google and Awesome
-//$awesome_google_compare = [];
-$descript_update = [];
-for($a = 0; $a < count($find_ip_awesomeminer); $a++) {
-	for($s = 0; $s < count($get_google_array_01); $s++) {
-
-		if ($find_ip_awesomeminer[$a] == $get_google_array_01[$s][16]) {
-
-			// Use this for testing:
-			//$to_add = "Match AwesomeMiner: " . $find_ip_awesomeminer[$a] . " Match Google: " . $get_google_array_01[$s][16];
-
-			// Use this for production:
-		  $to_add = $get_google_array_01[$s][16] . " - " . $get_google_array_01[$s][0] . " - " . $get_google_array_01[$s][3] . " - " . $get_google_array_01[$s][6];
-        
-    }  
-
-    // It is currently to difficult to do an else here, compute ip's that are not present with seperate logic, see "to-do" or "entry points"
-
-	}
-
-	// Because we are in a loop, we need to only add if not already in array
-	// Another option would be array_unique after the loop
-	if (!in_array($to_add, $descript_update)) {
-		array_push($descript_update, $to_add);
-	}
-
-}
-
-// Check awesomeminer for empty description fields, get ip of empty description fields
-for($q = 0; $q < count($get_awesomeminer_array_01); $q++) {
-
-	for($s = 0; $s < count($descript_update); $s++) {
-
-		// Find Description tags that are empty
-		if (strpos($get_awesomeminer_array_01[$q][2], "<Description />") !== false) {
-
-			$descript_update_explode = explode(" - ", $descript_update[$s]);
-	
-			if(strpos($get_awesomeminer_array_01[$q][3], $descript_update_explode[0]) !== false) {
-
-        // Replace empy Description fields
-				$get_awesomeminer_array_01[$q][2] = "      <Description>" . $descript_update[$s] . "</Description>";
-
-			}
-
-		}
-
-	}
-
-}
-
-print_r($get_awesomeminer_array_01);
-die();
 
 // Flatten 2D array, so that we can combine it with other arrays
 $array_flatten = [];
 for($d = 0; $d < count($get_awesomeminer_array_01); $d++) {
-	for($e = 0; $e < count($get_awesomeminer_array_01[$d]); $e++) {
-		
-		array_push($array_flatten, $get_awesomeminer_array_01[$d][$e]);
+  for($e = 0; $e < count($get_awesomeminer_array_01[$d]); $e++) {
 
-	}
+    array_push($array_flatten, $get_awesomeminer_array_01[$d][$e]);
+
+  }
 } 
 
 // Combine arrays for output
 $array_merge = array_merge($awesomeminer_array_00, $array_flatten, $awesomeminer_array_02);
+// Delete file for import if exists
+unlink("import.awesome"); 
 // Output file for import in to Awesome
 file_put_contents("import.awesome", implode(PHP_EOL, $array_merge), FILE_APPEND);
 
 // Output to terminal
-echo 'See "import.awesome" for updated <Description /> fields, then import' . "\n";
+echo 'See "import.awesome" for updated <Description></Description> fields, then import' . "\n";
 echo "Total number of records in AwesomeMiner export file: " . $total_awesome . "\n";
 echo "Total number of records in Google Sheets (Detail): " . $total_google . "\n";
 echo "For a difference of: " . $total_diff . "\n";
