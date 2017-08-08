@@ -232,13 +232,17 @@ $key_external_start = array_search('    <ExternalMinerList>', $get_awesomeminer_
 $key_external_end = array_search('    </ExternalMinerList>', $get_awesomeminer_array);
 
 // For testing:
-//echo $key_external_start . "\n";
-//echo $key_external_end . "\n";
+echo $key_external_start . "\n";
+echo $key_external_end . "\n";
+die();
 
 // Seperate parts of array for drastically easier manipulation later
 $awesomeminer_array_00 = array_slice($get_awesomeminer_array, 0, get_difference(0, $key_external_start + 1));
 $awesomeminer_array_01 = array_slice($get_awesomeminer_array, $key_external_start + 1, get_difference($key_external_start, $key_external_end - 1));
 $awesomeminer_array_02 = array_slice($get_awesomeminer_array, $key_external_end, get_difference($key_external_end, 1 + array_search(end($get_awesomeminer_array), $get_awesomeminer_array)));
+
+print_r($awesomeminer_array_01);
+die();
 
 // Break up in to <ExternalMinerExport> ... </ExternalMinerExport> blocks
 // Depending on the miner, the tag "<WorkerSuffix />" can be present or absent
@@ -254,12 +258,15 @@ for($q = 0; $q < count($awesomeminer_array_01); $q++) {
 	$indexCountSub++;
 
 	// If end of external miner, itterate to next array key
-	if($awesomeminer_array_01[$q] == '    </ExternalMinerExport>') {
+	if($awesomeminer_array_01[$q] == '      </ExternalMinerExport>') {
 		$indexCount++;
 		$indexCountSub = 0;
 	}
 
 }
+
+echo $get_awesomeminer_array_01[0][0];
+die();
 
 $total_awesome =  count($get_awesomeminer_array_01);
 $total_google = count($get_google_array_01);
