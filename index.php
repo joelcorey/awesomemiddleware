@@ -231,18 +231,10 @@ $get_awesomeminer_array = file(glob("ConfigData.xml")[0], FILE_IGNORE_NEW_LINES 
 $key_external_start = array_search('    <ExternalMinerList>', $get_awesomeminer_array);
 $key_external_end = array_search('    </ExternalMinerList>', $get_awesomeminer_array);
 
-// For testing:
-echo $key_external_start . "\n";
-echo $key_external_end . "\n";
-die();
-
 // Seperate parts of array for drastically easier manipulation later
 $awesomeminer_array_00 = array_slice($get_awesomeminer_array, 0, get_difference(0, $key_external_start + 1));
 $awesomeminer_array_01 = array_slice($get_awesomeminer_array, $key_external_start + 1, get_difference($key_external_start, $key_external_end - 1));
 $awesomeminer_array_02 = array_slice($get_awesomeminer_array, $key_external_end, get_difference($key_external_end, 1 + array_search(end($get_awesomeminer_array), $get_awesomeminer_array)));
-
-print_r($awesomeminer_array_01);
-die();
 
 // Break up in to <ExternalMinerExport> ... </ExternalMinerExport> blocks
 // Depending on the miner, the tag "<WorkerSuffix />" can be present or absent
@@ -258,14 +250,14 @@ for($q = 0; $q < count($awesomeminer_array_01); $q++) {
 	$indexCountSub++;
 
 	// If end of external miner, itterate to next array key
-	if($awesomeminer_array_01[$q] == '      </ExternalMinerExport>') {
+	if($awesomeminer_array_01[$q] == '      </ExternalMiner>') {
 		$indexCount++;
 		$indexCountSub = 0;
 	}
 
 }
 
-echo $get_awesomeminer_array_01[0][0];
+echo_array_multiD($get_awesomeminer_array_01);
 die();
 
 $total_awesome =  count($get_awesomeminer_array_01);
@@ -333,17 +325,14 @@ for($d = 0; $d < count($get_awesomeminer_array_01); $d++) {
 } 
 
 // Combine arrays for output
-$array_merge = array_merge($awesomeminer_array_00, $array_flatten, $awesomeminer_array_02);
+//$array_merge = array_merge($awesomeminer_array_00, $array_flatten, $awesomeminer_array_02);
 // Delete file for import if exists
-unlink("import.awesome"); 
+//unlink("import.awesome"); 
 // Output file for import in to Awesome
-file_put_contents("import.awesome", implode(PHP_EOL, $array_merge), FILE_APPEND);
+//file_put_contents("import.awesome", implode(PHP_EOL, $array_merge), FILE_APPEND);
 
 // Output to terminal
-echo 'See "import.awesome" for updated <Description></Description> fields, then import' . "\n";
-echo "Total number of records in AwesomeMiner export file: " . $total_awesome . "\n";
-echo "Total number of records in Google Sheets (Detail): " . $total_google . "\n";
-echo "For a difference of: " . $total_diff . "\n";
+// ...
 
 // ENTRY POINT: 
 // - Get IP's that are in Google Sheets but not AwesomeMiner. Seperate this logic in to seperate file. Add these IP's in to seperate import file for Awesome Miner
