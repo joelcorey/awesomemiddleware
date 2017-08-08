@@ -237,8 +237,6 @@ $awesomeminer_array_01 = array_slice($get_awesomeminer_array, $key_external_star
 $awesomeminer_array_02 = array_slice($get_awesomeminer_array, $key_external_end, get_difference($key_external_end, 1 + array_search(end($get_awesomeminer_array), $get_awesomeminer_array)));
 
 // Break up in to <ExternalMinerExport> ... </ExternalMinerExport> blocks
-// Depending on the miner, the tag "<WorkerSuffix />" can be present or absent
-// Therefore we have to do a more laborious search, rather than counting on a consistent number of 11
 // Todo: put this in to its own function
 $get_awesomeminer_array_01 = [];
 $indexCount = 0;
@@ -257,9 +255,6 @@ for($q = 0; $q < count($awesomeminer_array_01); $q++) {
 
 }
 
-echo_array_multiD($get_awesomeminer_array_01);
-die();
-
 $total_awesome =  count($get_awesomeminer_array_01);
 $total_google = count($get_google_array_01);
 $total_diff = $total_google - $total_awesome;
@@ -271,7 +266,7 @@ $match_count = 0;
 //print_r($get_google_array_01);
 //die();
 
-// Check awesomeminer for description fields, get ip of empty description fields
+// Check AwesomeMiner for description fields, get ip of empty description fields
 for($q = 0; $q < count($get_awesomeminer_array_01); $q++) {
 
   	for($r = 0; $r < count($get_awesomeminer_array_01[$q]); $r++) {
@@ -281,30 +276,25 @@ for($q = 0; $q < count($get_awesomeminer_array_01); $q++) {
 
   			// The third tag in this array is the hostname, get ip for comparison against google
   			// Also get tid of hostname tages
-  			$awesome_miner_description = scrape_between($get_awesomeminer_array_01[$q][3], ">", "<");
+  			$awesome_miner_description = scrape_between($get_awesomeminer_array_01[$q][16], ">", "<");
 
   			// Get rid of colon and port number
   			$awesome_miner_descript_ip = explode_ip_hostname($awesome_miner_description);
-  			
-        // Entry point:
-  			// Go through get_google_array_01 here and update get_awesomeminer_array_01
-        // Directly replace description fields here, instead of all this extra bullshit below
 
-        for($s = 0; $s < count($get_google_array_01); $s++) {
+	        for($s = 0; $s < count($get_google_array_01); $s++) {
 
-          if ($awesome_miner_descript_ip == $get_google_array_01[$s][16]) {
-            // DO STUFF!!! WEEEEEEEEEEEEE
+	          if ($awesome_miner_descript_ip == $get_google_array_01[$s][16]) {
 
-            $get_awesomeminer_array_01[$q][$r] = "      <Description>" . $get_google_array_01[$s][16] . " - " . $get_google_array_01[$s][0] . " - " . $get_google_array_01[$s][3] . " - " . $get_google_array_01[$s][6] . "</Description>";
-          }
+	            $get_awesomeminer_array_01[$q][$r] = "        <Description>" . $get_google_array_01[$s][16] . " - " . $get_google_array_01[$s][0] . " - " . $get_google_array_01[$s][3] . " - " . $get_google_array_01[$s][6] . "</Description>";
+	          }
 
-        }
+	        }
 
   		}
 
   	}
   
-  // Reset variable to prevent non matching results being mis-labeled from previous succesful find
+  	// Reset variable to prevent non matching results being mis-labeled from previous succesful find
 	$awesome_miner_descript_ip = '';
 
 }
@@ -325,11 +315,11 @@ for($d = 0; $d < count($get_awesomeminer_array_01); $d++) {
 } 
 
 // Combine arrays for output
-//$array_merge = array_merge($awesomeminer_array_00, $array_flatten, $awesomeminer_array_02);
-// Delete file for import if exists
-//unlink("import.awesome"); 
+$array_merge = array_merge($awesomeminer_array_00, $array_flatten, $awesomeminer_array_02);
+// Delete file if exists
+unlink("NewConfigData.xml"); 
 // Output file for import in to Awesome
-//file_put_contents("import.awesome", implode(PHP_EOL, $array_merge), FILE_APPEND);
+file_put_contents("NewConfigData.xml", implode(PHP_EOL, $array_merge), FILE_APPEND);
 
 // Output to terminal
 // ...
