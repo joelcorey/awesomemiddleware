@@ -224,16 +224,12 @@ function explode_ip_hostname($data) {
 }
 
 // There is an issue with importing a file that has EOL / new line from Windows.
-// This is an issue in all languages
 // To solve we will ignore this problem and just add a new line/return when echoing out
 $get_awesomeminer_array = file(glob("ConfigData.xml")[0], FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
-print_r($get_awesomeminer_array);
-die();
-
 // Need to define points to chop up awesome miner in to seperate arrays, for easier sorting:
-$key_external_start = array_search('  <ExternalMinerList>', $get_awesomeminer_array);
-$key_external_end = array_search('  </ExternalMinerList>', $get_awesomeminer_array);
+$key_external_start = array_search('    <ExternalMinerList>', $get_awesomeminer_array);
+$key_external_end = array_search('    </ExternalMinerList>', $get_awesomeminer_array);
 
 // For testing:
 //echo $key_external_start . "\n";
