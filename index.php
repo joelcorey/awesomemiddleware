@@ -84,17 +84,15 @@ if (count($values) == 0) {
   print "No data found.\n";
 } else {
 
-  // Define an array to store outputs of Google Sheets, for comparison with AwesomeMiner export
+  // Define an array to store outputs of Google Sheets, for comparison with AwesomeMiner XML file
   $get_google_array_01 = [];
   // We need a 2D array, so we need a variable to count the first index
   $google_indexCounter = 0;
 
-  //print "Detail data:\n";
   // Todo: translate this to a for loop, will make porting easier in the future
   foreach ($values as $row) {
     
     // Seperate in to variables for readability
-
     $serial = is_set($row, 0);
     $first_hosted = is_set($row, 1);
     $client = is_set($row, 2);
@@ -113,6 +111,7 @@ if (count($values) == 0) {
     $translated_ip = is_set($row, 20);
     $simple_ip = is_set($row, 21);
 
+    // For testing:
     //echo $simple_ip . " - " . $serial . " - " . $client . " - " . $type . "\n";
 
     // Move variables in to 2D array
@@ -161,8 +160,8 @@ function echo_array_multiD($arr) {
 	  }
 	 $count += 1;
 
-   // Depending on the array a little visual help for seperation:
-   echo "---\n";
+   	// Depending on the array a little visual help for seperation:
+   	echo "---\n";
 	}
 }
 
@@ -227,7 +226,10 @@ function explode_ip_hostname($data) {
 // There is an issue with importing a file that has EOL / new line from Windows.
 // This is an issue in all languages
 // To solve we will ignore this problem and just add a new line/return when echoing out
-$get_awesomeminer_array = file(glob("*.awesome")[0], FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+$get_awesomeminer_array = file(glob("ConfigData.xml")[0], FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+
+print_r($get_awesomeminer_array);
+die();
 
 // Need to define points to chop up awesome miner in to seperate arrays, for easier sorting:
 $key_external_start = array_search('  <ExternalMinerList>', $get_awesomeminer_array);
