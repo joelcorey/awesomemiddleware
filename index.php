@@ -141,6 +141,9 @@ if (count($values) == 0) {
 
 // END GOOGLE STUFF
 
+//Set time zone for later
+date_default_timezone_set('America/Los_Angeles');
+
 function echo_array($arr) {
 	for($q = 0; $q < count($arr); $q++) {
 		echo $arr[$q] . "\n";
@@ -320,6 +323,9 @@ for($d = 0; $d < count($get_awesomeminer_array_01); $d++) {
 
   }
 } 
+
+// Numeric month day year hour minute seconds am/pm time stamp for file naming
+$timestamp = date('mdo_hisA');
 
 // Combine arrays for output
 $array_merge = array_merge($awesomeminer_array_00, $array_flatten, $awesomeminer_array_02);
