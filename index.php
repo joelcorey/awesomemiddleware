@@ -262,24 +262,24 @@ $total_diff = $total_google - $total_awesome;
 $match_count = 0;
 
 // For testing:
-print_r($get_awesomeminer_array_01);
+//print_r($get_awesomeminer_array_01);
 //print_r($get_google_array_01);
-die();
+//die();
 
 // Check AwesomeMiner for description fields, get ip of empty description fields
 for($q = 0; $q < count($get_awesomeminer_array_01); $q++) {
 
   	for($r = 0; $r < count($get_awesomeminer_array_01[$q]); $r++) {
 
-  		// Find Description tags 
+  	// Instead of first searching for Description tags we search for the <hostname> tag
+    // This is necessary because the idiots who made AwesomeMiner are not consistant
+    // Sometimes the Hostname tag is the 15th, other times it is the 16th array key
+    // The Description tag location does not move, thank god 
 
-		//if ($get_awesomeminer_array_01[$q][$r] === 3) {
-		//	echo $get_awesomeminer_array_01[$q][$r];
-		//	die();
+		if (strpos($get_awesomeminer_array_01[$q][$r], "        <Hostname>") !== false) {
 
-			// The third tag in this array is the hostname, get ip for comparison against google
-			// Also get tid of hostname tages
-			$awesome_miner_description = scrape_between($get_awesomeminer_array_01[$q][16], ">", "<");
+			// Get rid of hostname tages
+			$awesome_miner_description = scrape_between($get_awesomeminer_array_01[$q][$r], ">", "<");
 
 			// Get rid of colon and port number
 			$awesome_miner_descript_ip = explode_ip_hostname($awesome_miner_description);
@@ -288,13 +288,16 @@ for($q = 0; $q < count($get_awesomeminer_array_01); $q++) {
 
           		if ($awesome_miner_descript_ip == $get_google_array_01[$s][16]) {
 
-            		$get_awesomeminer_array_01[$q][3] = "        <Description>" . $get_google_array_01[$s][16] . " - " . $get_google_array_01[$s][0] . " - " . $get_google_array_01[$s][3] . " - " . $get_google_array_01[$s][6] . "</Description>";
+                // For testing:
+          			//echo "Awesome: " . $awesome_miner_descript_ip . " Google: " . $get_google_array_01[$s][16] . "\n";
+
+                $get_awesomeminer_array_01[$q][3] = "        <Description>" . $get_google_array_01[$s][16] . " - " . $get_google_array_01[$s][0] . " - " . $get_google_array_01[$s][3] . " - " . $get_google_array_01[$s][6] . "</Description>";
 
             	}
 
           	}
 
-        //}
+      }
 
   	}
   
