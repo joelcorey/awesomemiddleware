@@ -324,15 +324,18 @@ for($d = 0; $d < count($get_awesomeminer_array_01); $d++) {
   }
 } 
 
-// Numeric month day year hour minute seconds am/pm time stamp for file naming
-$timestamp = date('mdo_hisA');
+// Numeric month day year hour minute seconds am/pm time stamp for backup file naming
+$timestamp = date('mdohisA');
+$sourcefile = "ConfigData.xml";
+$backupfile = $sourcefile . $timestamp;
+// Make backup of ConfigData.xml
+copy($sourcefile, $backupfile);
 
 // Combine arrays for output
 $array_merge = array_merge($awesomeminer_array_00, $array_flatten, $awesomeminer_array_02);
-// Delete file if exists
-unlink("NewConfigData.xml"); 
-// Output file for import in to Awesome
-file_put_contents("NewConfigData.xml", implode(PHP_EOL, $array_merge), FILE_APPEND);
+
+// Overwrite contents of ConfigData.xml with new data
+file_put_contents("ConfigData.xml", implode(PHP_EOL, $array_merge));
 
 // Output to terminal
 // ...
