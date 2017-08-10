@@ -9,4 +9,4 @@ Run "php index.php" in command prompt.
 
 Ready for testing in production.
 
-Fow now ConfigData.xml is not overwritten, NewConfigData.xml is instead.
+ConfigData.xml is overwritten with a backup of original generated.
