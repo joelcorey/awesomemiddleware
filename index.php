@@ -145,27 +145,27 @@ if (count($values) == 0) {
 date_default_timezone_set('America/Los_Angeles');
 
 function echo_array($arr) {
-	for($q = 0; $q < count($arr); $q++) {
-		echo $arr[$q] . "\n";
-	}
+  for($q = 0; $q < count($arr); $q++) {
+    echo $arr[$q] . "\n";
+  }
 }
 
 function echo_array_multiD($arr) {
-	$count = 0;
-	for($q = 0; $q < count($arr); $q++) {
-	  //var_dump($q);
+  $count = 0;
+  for($q = 0; $q < count($arr); $q++) {
+    //var_dump($q);
 
     // Depending on the array a little visual help for seperation:
-		echo "Count: " . $count . "\n";
+    echo "Count: " . $count . "\n";
 
-	  for($r = 0; $r < count($arr[$q]); $r++) {
-	    echo $arr[$q][$r] . "\n";
-	  }
-	 $count += 1;
+    for($r = 0; $r < count($arr[$q]); $r++) {
+      echo $arr[$q][$r] . "\n";
+    }
+   $count += 1;
 
-   	// Depending on the array a little visual help for seperation:
-   	echo "---\n";
-	}
+    // Depending on the array a little visual help for seperation:
+    echo "---\n";
+  }
 }
 
 function check_array_awesomeMultiD($arr1, $arr2) {
@@ -187,7 +187,7 @@ function get_difference($var1, $var2) {
 }
 
 function is_set($arr, $offset) {
-	// Without checking if array offset is set PHP will return an error on empty array members
+  // Without checking if array offset is set PHP will return an error on empty array members
     if(isset($arr[$offset])) {
       return $arr[$offset];
     } else {
@@ -204,31 +204,31 @@ function scrape_between($data, $start, $end){
 }
 
 function explode_ip_description($data) {
-	// This function explodes the Awesome Miner description if it contains 3 characters of "-"
-	// If Awesome Miner description does not contain 3 characters of "-" it does nothing
-	// Adjust this in the future if description delimiter and or delimiter number changes
-	// Some of machines in Google Sheets have odd naming conventions
+  // This function explodes the Awesome Miner description if it contains 3 characters of "-"
+  // If Awesome Miner description does not contain 3 characters of "-" it does nothing
+  // Adjust this in the future if description delimiter and or delimiter number changes
+  // Some of machines in Google Sheets have odd naming conventions
 
-	if (substr_count($data, " - ") === 3) {
-		$data = explode(" - ", $data);
-		return $data[3];
-	} elseif (substr_count($data, " - ") === 4) {
-		$data = explode(" - ", $data);
-		return $data[4];
-	} else {
-		return $data;
-	}
+  if (substr_count($data, " - ") === 3) {
+    $data = explode(" - ", $data);
+    return $data[3];
+  } elseif (substr_count($data, " - ") === 4) {
+    $data = explode(" - ", $data);
+    return $data[4];
+  } else {
+    return $data;
+  }
 
 }
 
 function explode_ip_hostname($data) {
-	$data = explode(":", $data);
-	return $data[0];
+  $data = explode(":", $data);
+  return $data[0];
 }
 
 // There is an issue with importing a file that has EOL / new line from Windows.
 // To solve we will ignore this problem and just add a new line/return when echoing out
-$get_awesomeminer_array = file(glob("ConfigData.xml")[0], FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+$get_awesomeminer_array = file(glob("../ConfigData.xml")[0], FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
 // Need to define points to chop up awesome miner in to seperate arrays, for easier sorting:
 $key_external_start = array_search('    <ExternalMinerList>', $get_awesomeminer_array);
@@ -246,15 +246,15 @@ $indexCount = 0;
 $indexCountSub = 0;
 for($q = 0; $q < count($awesomeminer_array_01); $q++) {
 
-	$get_awesomeminer_array_01[$indexCount][$indexCountSub] = $awesomeminer_array_01[$q];
+  $get_awesomeminer_array_01[$indexCount][$indexCountSub] = $awesomeminer_array_01[$q];
 
-	$indexCountSub++;
+  $indexCountSub++;
 
-	// If end of external miner, itterate to next array key
-	if($awesomeminer_array_01[$q] == '      </ExternalMiner>') {
-		$indexCount++;
-		$indexCountSub = 0;
-	}
+  // If end of external miner, itterate to next array key
+  if($awesomeminer_array_01[$q] == '      </ExternalMiner>') {
+    $indexCount++;
+    $indexCountSub = 0;
+  }
 
 }
 
@@ -272,40 +272,40 @@ $match_count = 0;
 // Check AwesomeMiner for description fields, get ip of empty description fields
 for($q = 0; $q < count($get_awesomeminer_array_01); $q++) {
 
-  	for($r = 0; $r < count($get_awesomeminer_array_01[$q]); $r++) {
+    for($r = 0; $r < count($get_awesomeminer_array_01[$q]); $r++) {
 
-  	// Instead of first searching for Description tags we search for the <hostname> tag
+    // Instead of first searching for Description tags we search for the <hostname> tag
     // This is necessary because the idiots who made AwesomeMiner are not consistant
     // Sometimes the Hostname tag is the 15th, other times it is the 16th array key
     // The Description tag location does not move, thank god 
 
-		if (strpos($get_awesomeminer_array_01[$q][$r], "        <Hostname>") !== false) {
+    if (strpos($get_awesomeminer_array_01[$q][$r], "        <Hostname>") !== false) {
 
-			// Get rid of hostname tages
-			$awesome_miner_description = scrape_between($get_awesomeminer_array_01[$q][$r], ">", "<");
+      // Get rid of hostname tages
+      $awesome_miner_description = scrape_between($get_awesomeminer_array_01[$q][$r], ">", "<");
 
-			// Get rid of colon and port number
-			$awesome_miner_descript_ip = explode_ip_hostname($awesome_miner_description);
+      // Get rid of colon and port number
+      $awesome_miner_descript_ip = explode_ip_hostname($awesome_miner_description);
 
-        	for($s = 0; $s < count($get_google_array_01); $s++) {
+          for($s = 0; $s < count($get_google_array_01); $s++) {
 
-          		if ($awesome_miner_descript_ip == $get_google_array_01[$s][16]) {
+              if ($awesome_miner_descript_ip == $get_google_array_01[$s][16]) {
 
                 // For testing:
-          			//echo "Awesome: " . $awesome_miner_descript_ip . " Google: " . $get_google_array_01[$s][16] . "\n";
+                //echo "Awesome: " . $awesome_miner_descript_ip . " Google: " . $get_google_array_01[$s][16] . "\n";
 
                 $get_awesomeminer_array_01[$q][3] = "        <Description>" . $get_google_array_01[$s][16] . " - " . $get_google_array_01[$s][0] . " - " . $get_google_array_01[$s][3] . " - " . $get_google_array_01[$s][6] . "</Description>";
 
-            	}
+              }
 
-          	}
+            }
 
       }
 
-  	}
+    }
   
-  	// Reset variable to prevent non matching results being mis-labeled from previous succesful find
-	$awesome_miner_descript_ip = '';
+    // Reset variable to prevent non matching results being mis-labeled from previous succesful find
+  $awesome_miner_descript_ip = '';
 
 }
 
@@ -326,7 +326,7 @@ for($d = 0; $d < count($get_awesomeminer_array_01); $d++) {
 
 // Numeric month day year hour minute seconds am/pm time stamp for backup file naming
 $timestamp = date('mdohisA');
-$sourcefile = "ConfigData.xml";
+$sourcefile = "../ConfigData.xml";
 $backupfile = $sourcefile . $timestamp;
 // Make backup of ConfigData.xml
 copy($sourcefile, $backupfile);
@@ -334,8 +334,11 @@ copy($sourcefile, $backupfile);
 // Combine arrays for output
 $array_merge = array_merge($awesomeminer_array_00, $array_flatten, $awesomeminer_array_02);
 
+// Remove source file
+//unlink($sourcefile);
+
 // Overwrite contents of ConfigData.xml with new data
-file_put_contents("ConfigData.xml", implode(PHP_EOL, $array_merge));
+file_put_contents($sourcefile, implode(PHP_EOL, $array_merge));
 
 // Output to terminal
 // ...
