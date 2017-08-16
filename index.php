@@ -75,8 +75,9 @@ $service = new Google_Service_Sheets($client);
 
 // Get spreadsheet data
 // 
+
 $spreadsheetId = '1Ao0KATwjuWVTrrDFZAE_ZhPMI2vlyLa0bTNj_JoKoz8';
-$range = 'Detail!A:Z';
+$range = 'Data!A:M';
 $response = $service->spreadsheets_values->get($spreadsheetId, $range);
 $values = $response->getValues();
 
@@ -89,6 +90,10 @@ if (count($values) == 0) {
   // We need a 2D array, so we need a variable to count the first index
   $google_indexCounter = 0;
 
+  // For testing:
+  //print_r($values);
+  //die();
+
   // Todo: translate this to a for loop, will make porting easier in the future
   foreach ($values as $row) {
     
@@ -100,16 +105,6 @@ if (count($values) == 0) {
     $vlan = is_set($row, 4);
     $ip = is_set($row, 5);
     $location = is_set($row, 6);
-    $tunnel = is_set($row, 7);
-    $rack = is_set($row, 8);
-    $mac_dna = is_set($row, 11);
-    $miner_serial = is_set($row, 12);
-    $worker = is_set($row, 13);
-    $comments = is_set($row, 14);
-    $user_name = is_set($row, 15);
-    $password = is_set($row, 16);
-    $translated_ip = is_set($row, 20);
-    $simple_ip = is_set($row, 21);
 
     // For testing:
     //echo $simple_ip . " - " . $serial . " - " . $client . " - " . $type . "\n";
@@ -122,16 +117,7 @@ if (count($values) == 0) {
     $get_google_array_01[$google_indexCounter][4] = $vlan;
     $get_google_array_01[$google_indexCounter][5] = $ip;
     $get_google_array_01[$google_indexCounter][6] = $location;
-    $get_google_array_01[$google_indexCounter][7] = $tunnel;
-    $get_google_array_01[$google_indexCounter][8] = $rack;
-    $get_google_array_01[$google_indexCounter][9] = $mac_dna;
-    $get_google_array_01[$google_indexCounter][10] = $miner_serial;
-    $get_google_array_01[$google_indexCounter][11] = $worker;
-    $get_google_array_01[$google_indexCounter][12] = $comments;
-    $get_google_array_01[$google_indexCounter][13] = $user_name;
-    $get_google_array_01[$google_indexCounter][14] = $password;
-    $get_google_array_01[$google_indexCounter][15] = $translated_ip;
-    $get_google_array_01[$google_indexCounter][16] = $simple_ip;
+    $get_google_array_01[$google_indexCounter][7] = "10.0." . $get_google_array_01[$google_indexCounter][4] . "." . $get_google_array_01[$google_indexCounter][5] . " - " . $get_google_array_01[$google_indexCounter][0] . " - " . $get_google_array_01[$google_indexCounter][3] . " - " . $get_google_array_01[$google_indexCounter][6];
 
     // itterate up to next index count
     $google_indexCounter++;
@@ -289,12 +275,28 @@ for($q = 0; $q < count($get_awesomeminer_array_01); $q++) {
 
           for($s = 0; $s < count($get_google_array_01); $s++) {
 
-              if ($awesome_miner_descript_ip == $get_google_array_01[$s][16]) {
+              if ($awesome_miner_descript_ip == $get_google_array_01[$s][7]) {
 
-                // For testing:
-                //echo "Awesome: " . $awesome_miner_descript_ip . " Google: " . $get_google_array_01[$s][16] . "\n";
+                // For reference
+                //$serial = is_set($row, 0);
+                //$first_hosted = is_set($row, 1);
+                //$client = is_set($row, 2);
+                //$type = is_set($row, 3);
+                //$vlan = is_set($row, 4);
+                //$ip = is_set($row, 5);
+                //$location = is_set($row, 6);
+                //
+                //$get_google_array_01[$google_indexCounter][0] = $serial;
+                //$get_google_array_01[$google_indexCounter][1] = $first_hosted;
+                //$get_google_array_01[$google_indexCounter][2] = $client;
+                //$get_google_array_01[$google_indexCounter][3] = $type;
+                //$get_google_array_01[$google_indexCounter][4] = $vlan;
+                //$get_google_array_01[$google_indexCounter][5] = $ip;
+                //$get_google_array_01[$google_indexCounter][6] = $location;
+                // And as represented values, for reference:
+                //$get_google_array_01[$google_indexCounter][7] = "ip - asset - type - location"
 
-                $get_awesomeminer_array_01[$q][3] = "        <Description>" . $get_google_array_01[$s][16] . " - " . $get_google_array_01[$s][0] . " - " . $get_google_array_01[$s][3] . " - " . $get_google_array_01[$s][6] . "</Description>";
+                $get_awesomeminer_array_01[$q][3] = "        <Description>" . $get_google_array_01[$s][7] . "</Description>";
 
               }
 
@@ -322,7 +324,7 @@ for($d = 0; $d < count($get_awesomeminer_array_01); $d++) {
     array_push($array_flatten, $get_awesomeminer_array_01[$d][$e]);
 
   }
-} 
+}
 
 // Numeric month day year hour minute seconds am/pm time stamp for backup file naming
 $timestamp = date('mdohisA');
@@ -334,7 +336,7 @@ copy($sourcefile, $backupfile);
 // Combine arrays for output
 $array_merge = array_merge($awesomeminer_array_00, $array_flatten, $awesomeminer_array_02);
 
-// Remove source file
+// Remove source file, probably no longer necessary
 //unlink($sourcefile);
 
 // Overwrite contents of ConfigData.xml with new data
@@ -343,7 +345,5 @@ file_put_contents($sourcefile, implode(PHP_EOL, $array_merge));
 // Output to terminal
 // ...
 
-// ENTRY POINT: 
-// - Get IP's that are in Google Sheets but not AwesomeMiner. Seperate this logic in to seperate file. Add these IP's in to seperate import file for Awesome Miner
-//
-// - Create master 2 dimensional array for all IP's. Could have a "matching" field. Could use this to list IP's that are not matched. Is this a good approach? Would it create un-needed complexicty?
+// ENTRY POINTS:
+// ...
