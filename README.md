@@ -3,7 +3,7 @@ While asset001 was for import/export with AwesomeMiner (failed), asset002 is for
 Dependencies:  
 https://developers.google.com/sheets/api/quickstart/php  
 https://getcomposer.org/download/  
-PHP 5+ installed locally with path variable set. The easy button here is the Bitnami LEMP or LAMP stack  
+PHP 5.4+ installed locally with path variable set. The easy button here is the Bitnami LEMP or LAMP stack  
 install for Windows. Then just set your path variable to where php.exe is.  
 
 Ready for testing in production:  
