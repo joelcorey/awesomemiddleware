@@ -190,7 +190,7 @@ function scrape_between($data, $start, $end){
 }
 
 function explode_ip_description($data) {
-  // This function explodes the Awesome Miner description if it contains 3 characters of "-"
+  // This function explodes the Awesome Miner description dependent on characters of "-"
   // If Awesome Miner description does not contain 3 characters of "-" it does nothing
   // Adjust this in the future if description delimiter and or delimiter number changes
   // Some of machines in Google Sheets have odd naming conventions
