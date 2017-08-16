@@ -117,7 +117,8 @@ if (count($values) == 0) {
     $get_google_array_01[$google_indexCounter][4] = $vlan;
     $get_google_array_01[$google_indexCounter][5] = $ip;
     $get_google_array_01[$google_indexCounter][6] = $location;
-    $get_google_array_01[$google_indexCounter][7] = "10.0." . $get_google_array_01[$google_indexCounter][4] . "." . $get_google_array_01[$google_indexCounter][5] . " - " . $get_google_array_01[$google_indexCounter][0] . " - " . $get_google_array_01[$google_indexCounter][3] . " - " . $get_google_array_01[$google_indexCounter][6];
+     $get_google_array_01[$google_indexCounter][7] = "10.0." . $get_google_array_01[$google_indexCounter][4] . "." . $get_google_array_01[$google_indexCounter][5];
+    $get_google_array_01[$google_indexCounter][8] = "10.0." . $get_google_array_01[$google_indexCounter][4] . "." . $get_google_array_01[$google_indexCounter][5] . " - " . $get_google_array_01[$google_indexCounter][0] . " - " . $get_google_array_01[$google_indexCounter][3] . " - " . $get_google_array_01[$google_indexCounter][6];
 
     // itterate up to next index count
     $google_indexCounter++;
@@ -277,7 +278,7 @@ for($q = 0; $q < count($get_awesomeminer_array_01); $q++) {
 
               if ($awesome_miner_descript_ip == $get_google_array_01[$s][7]) {
 
-                $get_awesomeminer_array_01[$q][3] = "        <Description>" . $get_google_array_01[$s][7] . "</Description>";
+                $get_awesomeminer_array_01[$q][3] = "        <Description>" . $get_google_array_01[$s][8] . "</Description>";
 
               }
 
