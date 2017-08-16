@@ -277,25 +277,6 @@ for($q = 0; $q < count($get_awesomeminer_array_01); $q++) {
 
               if ($awesome_miner_descript_ip == $get_google_array_01[$s][7]) {
 
-                // For reference
-                //$serial = is_set($row, 0);
-                //$first_hosted = is_set($row, 1);
-                //$client = is_set($row, 2);
-                //$type = is_set($row, 3);
-                //$vlan = is_set($row, 4);
-                //$ip = is_set($row, 5);
-                //$location = is_set($row, 6);
-                //
-                //$get_google_array_01[$google_indexCounter][0] = $serial;
-                //$get_google_array_01[$google_indexCounter][1] = $first_hosted;
-                //$get_google_array_01[$google_indexCounter][2] = $client;
-                //$get_google_array_01[$google_indexCounter][3] = $type;
-                //$get_google_array_01[$google_indexCounter][4] = $vlan;
-                //$get_google_array_01[$google_indexCounter][5] = $ip;
-                //$get_google_array_01[$google_indexCounter][6] = $location;
-                // And as represented values, for reference:
-                //$get_google_array_01[$google_indexCounter][7] = "ip - asset - type - location"
-
                 $get_awesomeminer_array_01[$q][3] = "        <Description>" . $get_google_array_01[$s][7] . "</Description>";
 
               }
