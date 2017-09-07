@@ -4,7 +4,7 @@ Dependencies:
 https://developers.google.com/sheets/api/quickstart/php  
 https://getcomposer.org/download/  
 
-To do:
+To do:  
 1.) Not yet tested dependency:  
 PHP 5.4+ installed locally installed in a Linux virtual machine with a shared folder of the AwesomeMiner %appdata% folder and a port open to access over the network.  
 2.) If possible, allow VM to check if AwesomeMiner is running and abort if it is running.  
