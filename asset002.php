@@ -128,6 +128,41 @@ if (count($values) == 0) {
 
 // END GOOGLE STUFF
 
+echo "AwesomeMiner - searching\n";
+
+$AwesomeMiner_check = 1;
+
+// kill tasks matching
+$kill_pattern = '~(AwesomeMiner|Awesome|Miner)\.exe~i';
+
+// get tasklist
+$task_list = array();
+exec("tasklist 2>NUL", $task_list);
+
+foreach ($task_list AS $task_line){
+  if (preg_match($kill_pattern, $task_line, $out)){
+    echo "Detected: ".$out[1]."\n   Sending term signal!\n";
+    exec("taskkill /F /IM ".$out[1].".exe 2>NUL");
+    $AwesomeMiner_check = 0;
+  }
+}
+
+// Wait for 2 seconds to make sure AwesomeMiner closes down
+sleep(2);
+echo "AwesomeMiner - not running\n\n";
+
+echo "AwesomeMiner is closed. Please double check that it is closed before proceeding\n";
+echo "";
+
+if (PHP_OS == 'WINNT') {
+  echo '$ ';
+  $line = stream_get_line(STDIN, 1024, PHP_EOL);
+} else {
+  $line = readline('$ ');
+}
+
+die();
+
 //Set time zone for later
 date_default_timezone_set('America/Los_Angeles');
 
