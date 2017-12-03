@@ -359,7 +359,7 @@ for($d = 0; $d < count($get_awesomeminer_array_01); $d++) {
 
 // Numeric month day year hour minute seconds am/pm time stamp for backup file naming
 $timestamp = date('mdohisA');
-$sourcefile = "../ConfigData.xml";
+$sourcefile = $awesomeAppData;
 $backupfile = $sourcefile . $timestamp;
 // Make backup of ConfigData.xml
 copy($sourcefile, $backupfile);
