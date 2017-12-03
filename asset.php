@@ -178,6 +178,8 @@ if (count($values) == 0) {
 
 //  **** END GOOGLE AUTH ****
 
+$awesomeAppData = "C:\Users\joelc\AppData\Roaming\AwesomeMiner\ConfigData.xml";
+
 function echo_array($arr) {
   for($q = 0; $q < count($arr); $q++) {
     echo $arr[$q] . "\n";
@@ -262,7 +264,7 @@ function explode_ip_hostname($data) {
 
 // There is an issue with importing a file that has EOL / new line from Windows.
 // To solve we will ignore this problem and just add a new line/return when echoing out
-$get_awesomeminer_array = file(glob("../ConfigData.xml")[0], FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+$get_awesomeminer_array = file(glob($awesomeAppData)[0], FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
 // Need to define points to chop up awesome miner in to seperate arrays, for easier sorting:
 $key_external_start = array_search('    <ExternalMinerList>', $get_awesomeminer_array);
