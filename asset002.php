@@ -1,4 +1,54 @@
 <?php
+
+//  **** START AWESOMEMINER PRE-RUN CHECK ****
+echo "AwesomeMiner - searching\n";
+
+//$AwesomeMiner_check = 1;
+
+// kill tasks matching
+$kill_pattern = '~(AwesomeMiner|Awesome|Miner)\.exe~i';
+
+// get tasklist
+$task_list = array();
+exec("tasklist 2>NUL", $task_list);
+
+foreach ($task_list AS $task_line){
+  if (preg_match($kill_pattern, $task_line, $out)){
+    echo "Detected: ".$out[1]."\n   Sending term signal!\n";
+    exec("taskkill /F /IM ".$out[1].".exe 2>NUL");
+    //$AwesomeMiner_check = 0;
+  }
+}
+
+// Wait for 2 seconds to make sure AwesomeMiner closes down
+sleep(2);
+echo "AwesomeMiner - not running\n\n";
+
+echo "This program has attempted to close AwesomeMiner. Please double check that it is closed before proceeding.\n";
+echo "It is critically important that it is in fact closed.\n";
+echo "";
+
+if (PHP_OS == 'WINNT') {
+  echo '<Y/n>: ';
+  $line = stream_get_line(STDIN, 1024, PHP_EOL);
+} else {
+  $line = readline('<Y/n>: ');
+}
+
+if ($line == "" || $line == "y" || $line == "Y") {
+  // Do nothing and bypass blocking code
+} else {
+  // Run to the hills!
+  echo "No selected, terminating program.\n";
+  die();
+}
+//  **** END AWESOMEMINER PRE-RUN CHECK ****
+
+
+//Set time zone for later
+date_default_timezone_set('America/Los_Angeles');
+
+//  **** START GOOGLE AUTH ****
 require_once __DIR__ . '/vendor/autoload.php';
 
 define('APPLICATION_NAME', 'Google Sheets API PHP Quickstart');
@@ -126,45 +176,7 @@ if (count($values) == 0) {
   }
 }
 
-// END GOOGLE STUFF
-
-echo "AwesomeMiner - searching\n";
-
-$AwesomeMiner_check = 1;
-
-// kill tasks matching
-$kill_pattern = '~(AwesomeMiner|Awesome|Miner)\.exe~i';
-
-// get tasklist
-$task_list = array();
-exec("tasklist 2>NUL", $task_list);
-
-foreach ($task_list AS $task_line){
-  if (preg_match($kill_pattern, $task_line, $out)){
-    echo "Detected: ".$out[1]."\n   Sending term signal!\n";
-    exec("taskkill /F /IM ".$out[1].".exe 2>NUL");
-    $AwesomeMiner_check = 0;
-  }
-}
-
-// Wait for 2 seconds to make sure AwesomeMiner closes down
-sleep(2);
-echo "AwesomeMiner - not running\n\n";
-
-echo "AwesomeMiner is closed. Please double check that it is closed before proceeding\n";
-echo "";
-
-if (PHP_OS == 'WINNT') {
-  echo '$ ';
-  $line = stream_get_line(STDIN, 1024, PHP_EOL);
-} else {
-  $line = readline('$ ');
-}
-
-die();
-
-//Set time zone for later
-date_default_timezone_set('America/Los_Angeles');
+//  **** END GOOGLE AUTH ****
 
 function echo_array($arr) {
   for($q = 0; $q < count($arr); $q++) {
