@@ -323,15 +323,15 @@ for($q = 0; $q < count($get_awesomeminer_array_01); $q++) {
       // Get rid of colon and port number
       $awesome_miner_descript_ip = explode_ip_hostname($awesome_miner_description);
 
-          for($s = 0; $s < count($get_google_array_01); $s++) {
+        for($s = 0; $s < count($get_google_array_01); $s++) {
 
-              if ($awesome_miner_descript_ip == $get_google_array_01[$s][7]) {
+          if ($awesome_miner_descript_ip == $get_google_array_01[$s][7]) {
 
-                $get_awesomeminer_array_01[$q][3] = "        <Description>" . $get_google_array_01[$s][8] . "</Description>";
+            $get_awesomeminer_array_01[$q][3] = "        <Description>" . $get_google_array_01[$s][8] . "</Description>";
 
-              }
+          }
 
-            }
+        }
 
       }
 
