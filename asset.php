@@ -270,7 +270,7 @@ $get_awesomeminer_array = file(glob($awesomeAppData)[0], FILE_IGNORE_NEW_LINES |
 $key_external_start = array_search('    <ExternalMinerList>', $get_awesomeminer_array);
 $key_external_end = array_search('    </ExternalMinerList>', $get_awesomeminer_array);
 
-// Seperate parts of array for drastically easier manipulation later
+// Seperate parts of array for drastically easier sorting/manipulation later
 $awesomeminer_array_00 = array_slice($get_awesomeminer_array, 0, get_difference(0, $key_external_start + 1));
 $awesomeminer_array_01 = array_slice($get_awesomeminer_array, $key_external_start + 1, get_difference($key_external_start, $key_external_end - 1));
 $awesomeminer_array_02 = array_slice($get_awesomeminer_array, $key_external_end, get_difference($key_external_end, 1 + array_search(end($get_awesomeminer_array), $get_awesomeminer_array)));
@@ -293,6 +293,8 @@ for($q = 0; $q < count($awesomeminer_array_01); $q++) {
   }
 
 }
+
+
 
 $total_awesome =  count($get_awesomeminer_array_01);
 $total_google = count($get_google_array_01);
@@ -317,21 +319,24 @@ for($q = 0; $q < count($get_awesomeminer_array_01); $q++) {
 
     if (strpos($get_awesomeminer_array_01[$q][$r], "        <Hostname>") !== false) {
 
+      echo $get_awesomeminer_array_01[$q][$r] . "\n";
       // Get rid of hostname tages
-      $awesome_miner_description = scrape_between($get_awesomeminer_array_01[$q][$r], ">", "<");
+      //$awesome_miner_description = scrape_between($get_awesomeminer_array_01[$q][$r], ">", "<");
 
       // Get rid of colon and port number
-      $awesome_miner_descript_ip = explode_ip_hostname($awesome_miner_description);
+      //$awesome_miner_descript_ip = explode_ip_hostname($awesome_miner_description);
 
-        for($s = 0; $s < count($get_google_array_01); $s++) {
+        //for($s = 0; $s < count($get_google_array_01); $s++) {
 
-          if ($awesome_miner_descript_ip == $get_google_array_01[$s][7]) {
+          //if ($awesome_miner_descript_ip == $get_google_array_01[$s][7]) {
 
-            $get_awesomeminer_array_01[$q][3] = "        <Description>" . $get_google_array_01[$s][8] . "</Description>";
+            //$get_awesomeminer_array_01[$q][3] = "        <Description>" . $get_google_array_01[$s][2] . " - " . $get_google_array_01[$s][8] . "</Description>";
 
-          }
+            //echo "        <Description>" . $get_google_array_01[$s][2] . " - " . $get_google_array_01[$s][8] . "</Description>\n";
 
-        }
+          //}
+
+        //}
 
       }
 
