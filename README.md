@@ -1,5 +1,5 @@
 # AwesomeMiner Google Sheets middleware
-Integreate the Mailgun API using PHP.
+Integrate the Mailgun API using PHP.
 
 ## Why?
 - Update AwesomeMiner database to reflect changes in Google Sheets
