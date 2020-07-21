@@ -123,10 +123,7 @@ function expandHomeDirectory($path) {
 $client = getClient();
 $service = new Google_Service_Sheets($client);
 
-// Get spreadsheet data
-// 
-
-//$spreadsheetId = '1Ao0KATwjuWVTrrDFZAE_ZhPMI2vlyLa0bTNj_JoKoz8';
+$spreadsheetId = 'your-spreadsheet-id';
 $range = 'Data!A:M';
 $response = $service->spreadsheets_values->get($spreadsheetId, $range);
 $values = $response->getValues();
